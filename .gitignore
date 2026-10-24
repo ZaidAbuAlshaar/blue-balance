@@ -25,3 +25,6 @@ web/playwright-report/
 # Candidate geometries and chips: real farm plots, not published (regenerate with the pipeline)
 data/processed/fields.geojson
 data/processed/chips/
+
+# Local Claude Code worktrees and settings
+.claude/
