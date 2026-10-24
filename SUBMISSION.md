@@ -13,7 +13,7 @@ Jordan loses 41% of its water as non-revenue water (Petra, Aug 2026), and the mi
 - **Fusion:** a Bayesian update fuses the two (0.71 line only, 0.82 fused for the top segment). The queue is ranked by expected m³/day stopped per inspection hour, always with intervals.
 - **Learning:** field results update the posteriors live.
 - **AI:** a local Qwen3.5-4B agent answers Arabic questions through tools, and a local Gemma 4 E4B extractor turns Jordanian-Arabic crew reports into 10 fields, each tied to its exact words.
-- **Remember:** a confirmed finding becomes a map edit that a second engineer must approve.
+- **Remember:** a crew-verified finding becomes a draft map edit that a second engineer must approve. None exist yet; today's demo entries are Simulated.
 
 **How we built it**
 - FastAPI + SQLite, where the database enforces the evidence labels, intervals, append-only history and approver ≠ proposer.
@@ -26,7 +26,7 @@ Jordan loses 41% of its water as non-revenue water (Petra, Aug 2026), and the mi
 - **Agent choice:** Gemma 4 E4B was the better extractor (95.9% on the dev set) but the weaker agent. It asked permission instead of calling tools and invented case IDs, so we split the roles by measured results.
 - **Prompt injection:** Gemma obeyed an injected instruction inside a crew report, so we added a code-level guard.
 - **Data gaps:** the 2021 and 2024 Sentinel-2 scenes were corrupt or empty, so we replaced them.
-- **No isolated fields:** every candidate near the route turned out to sit inside existing farmland. We kept that honest instead of tuning thresholds.
+- **No isolated fields:** all 14 candidates turned out to sit inside existing farmland. We kept that honest instead of tuning thresholds, and we don't publish their exact locations in the repo.
 
 **What we're proud of**
 - Every number has an interval and an Observed / Simulated / Hypothesis / Field-verified label, enforced by the database.

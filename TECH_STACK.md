@@ -8,7 +8,7 @@ Status: **stack + D1–D6 APPROVED by Zaid (2026-10-24). Downloads running. No a
   - [ ] NEEDS-ZAID: ask the hosts what "time limit removed" actually means.
 - [x] **D2 Name (changed in U2):** **"Blue Balance (ميزان الأزرق)"** everywhere: UI, code, repo, docs, `brand/`, slides. The fresh repo is created today with nothing reused. The earlier prototype appears only in the one-line prior-work disclosure in the submission.
   - [ ] A new Blue Balance logo is needed (design brief). The old mark was moved out of `brand/`.
-- [x] **D3 Python:** use the installed Python directly today and write `requirements-lock.txt`. A uv venv comes later.
+- [x] **D3 Python:** use the installed Python directly today and write `requirements.txt`. A uv venv comes later.
 - [x] **D4 Model (changed in U2):** picks come from the measured bake-off in `MODELS.md`: agent `qwen3.5:4b`, extractor `gemma4:e4b-it-qat` (D7 pending). Waiting for Zaid's "موافق" on MODELS.md.
 - [x] **D5 Main line:** an "Approximate route" along the Desert Highway through Qatraneh. No pipe features are downloaded.
 - [x] **D6 Ollama:** pin v0.40.10 as is (a 14-day-old release may lack Gemma 4 support).
@@ -36,7 +36,7 @@ Status: **stack + D1–D6 APPROVED by Zaid (2026-10-24). Downloads running. No a
 
 ## 1. Runtime and environment
 
-- [ ] **Python 3.11.6** (`D:\python.exe`) ✅, TODAY. Run directly, because every backend and geo library below is already in `D:\Lib\site-packages`. Freeze the exact versions used into `requirements-lock.txt` (A5).
+- [ ] **Python 3.11.6** (`D:\python.exe`) ✅, TODAY. Run directly, because every backend and geo library below is already in `D:\Lib\site-packages`. Exact versions used are frozen in `requirements.txt`.
   - LATER: a uv-managed Python venv on E:. uv 0.11.21 ✅ is installed. A uv-managed interpreter avoids the `D:\Lib\sitecustomize.py` landmine.
   - → **Decision D3**
 - [ ] **Node 22.17.1 + npm 10.9.2 + pnpm 11.3.0** ✅, TODAY (A6).
@@ -47,8 +47,8 @@ Status: **stack + D1–D6 APPROVED by Zaid (2026-10-24). Downloads running. No a
 
 ## 2. Backend (API, database, auth)
 
-- [x] **FastAPI 0.143.0 + Starlette 1.3.1 + uvicorn 0.49.0**, TODAY (changed at build time). The installed 0.111.0 crashed on `FastAPI()` against Starlette 1.3.1, so it was upgraded to the newest release ≥ 14 days old (2026-10-08).
-- [ ] **pydantic 2.13.4** ✅, TODAY: every request and response, and a `Quantity` type of value + interval + label + evidence_id.
+- [x] **FastAPI 0.143.0 + Starlette 1.3.1 + uvicorn 0.29.0**, TODAY (changed at build time). The installed 0.111.0 crashed on `FastAPI()` against Starlette 1.3.1, so it was upgraded to the newest release ≥ 14 days old (2026-10-08).
+- [ ] **pydantic 2.13.1** ✅, TODAY: every request and response, and a `Quantity` type of value + interval + label + evidence_id.
 - [ ] **SQLite 3.42 (stdlib) + GeoJSON text columns** ✅, TODAY. No PostGIS and no SpatiaLite (`mod_spatialite` is not available).
   - The A5 spike proved that CHECK constraints and triggers reject each of these:
     - a bad label

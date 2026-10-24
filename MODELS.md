@@ -1,6 +1,6 @@
 # Blue Balance (ميزان الأزرق) · Open-Weight Models Review
 
-Status: **for Zaid's approval ("موافق").** Nothing past the downloads and this bake-off has been built.
+Status: **approved by Zaid on 2026-10-24 (D7–D9).** Since then the agent and the extractor were built and evaluated; see the Role 2 held-out result and `eval/agent/RESULTS.md`.
 
 - **Bake-off:** run on this laptop (RTX 4060 Laptop, 8,188 MiB VRAM) on 2026-10-24, 15:23–15:52 +03.
 - **Raw evidence:** every prompt, response, timing and score is in `eval/bakeoff/results/*.json`. The harness is `eval/bakeoff/`, and its README has the exact commands.
@@ -37,7 +37,7 @@ Same settings for every model: `temperature 0`, `seed 42`, `num_ctx 8192`, `thin
 | gemma4:e4b-it-qat | 2 | 7 / 7 / 7 | 3 ✔ | ✘ wrote `low` | 10 | 95.9% → 95.9% | 100% | 96.7% | 1.10 | 3.70 | 61.4 | 4,293 | 12.9 |
 | qwen3.5:4b | 1 | 9 / 9 / 9 | 3 ✔ | ✔ `high` | 10 | 83.7% → 82.7% | 98.4% | 90.0% | 1.03 | 3.52 | 64.2 | 3,983 | 6.9 |
 | qwen3.5:4b | 2 | **10 / 10 / 10** | 3 ✔ | ✔ `high` | 10 | 84.7% → 84.7% | 98.4% | 93.3% | 1.01 | 3.50 | 65.3 | 3,981 | 6.4 |
-| qwen3.5:9b | n/a | **Not run.** The 6.55 GB download failed ("connection forcibly closed by the remote host") on the phone hotspot. Retrying. | | | | | | | | | | | |
+| qwen3.5:9b | n/a | **Not run.** The 6.55 GB download failed ("connection forcibly closed by the remote host") on the phone hotspot, twice. **Skipped (D9).** | | | | | | | | | | | |
 
 **How to read it**
 - **Tool calls:** a call is "valid" if it passes our schema check (required args, enums, ID pattern, ranges). "Right args" checks only the listed keys.
@@ -70,7 +70,7 @@ Same settings for every model: `temperature 0`, `seed 42`, `num_ctx 8192`, `thin
 | Ask in Arabic: "شو أول ٥ مواقع؟" / "ليش هاي الأولى؟" | Qwen3.5-4B | Turns Jordanian-Arabic questions into the right tool call with the right arguments (10/10), and answers with evidence IDs | The Arabic "Ask" panel disappears; users need menus |
 | "الفريق زار KRK-F-012 وما لقوا إشي" | Qwen3.5-4B | Maps free crew wording to `ingest_field_result(no_anomaly_found)`, which changes state. The re-rank itself is done by the Bayesian engine in code. | The learning loop still works from the form; only the chat path to it goes |
 | Draft work order | Qwen3.5-4B | Writes the bilingual text of a **draft**. A different engineer approves it. | Falls back to a template text |
-| Crew report → 10 fields with highlighted source words | Gemma 4 E4B | Structures free Jordanian-Arabic text into 10 typed fields. Every filled field has an exact quote (100% span match); unsupported fields stay empty (96.7%). | Falls back to the rule-based extractor, which is **not yet built or measured**. The "Verify" step loses its main AI piece. |
+| Crew report → 10 fields with highlighted source words | Gemma 4 E4B | Structures free Jordanian-Arabic text into 10 typed fields. Every filled field has an exact quote (100% span match); unsupported fields stay empty (96.7%). | Falls back to the rule-based extractor, which was built later. On the held-out set it is on par: 92.3% vs the LLM's 90.9%. The LLM is not proven better there. |
 | Detection, fusion, ranking, next-best measurement | **No ML model today** | Physics (WNTR) + Bayesian update + information gain, all in code | n/a. We do not claim AI here today. |
 | Voice notes | Whisper (extra) | Speech to text | Typing still works, so this is not core today |
 
@@ -131,8 +131,8 @@ Prithvi, Chronos and a GNN are **not integrated today**. Adding them without lab
 - [x] **Arabic / dialect (measured on this set):** 10 synthetic Jordanian reports, including rural dialect, ASR-like typos (C08), mixed English (C07) and both digit styles. 95.9% field accuracy.
 - [ ] **Eligibility:** **pending.** "Gemma" is an encouraged example. The "Best Use of Gemma 4" challenge text mentions access "through the Gemini API", and whether local Ollama use counts is unknown.
 - [x] **Integration test:** without it, the crew-report screen falls back to rules, and the Verify step loses its AI (see §1.3).
-- [ ] **Baseline and metric:**
-  - Baseline: the rule-based extractor (Update 1 §3.4), **not yet built**. It must be measured on the same reports.
+- [x] **Baseline and metric:**
+  - Baseline: the rule-based extractor (Update 1 §3.4). It was built and measured on the 30-report held-out set: rules 92.3% vs LLM 90.9%, so on par (see the held-out result below).
   - Metrics: field accuracy, span exact-match, empty-when-unsupported.
   - A frozen held-out set of ≥25 reports, written by someone who did not write the prompt, is still to do.
 - [x] **Criteria raised:** 6, 5 (provenance idea), 7 (no-guess rule), 3.
@@ -248,14 +248,14 @@ These scores are our own judgement (**Hypothesis**), not measurements. "Today" a
   - The extractor produces span-verified records.
   - Code guardrails sit around both (number checker, span verifier, no approve tool).
 - **Against:** the core detection and ranking are physics + Bayes, not ML. No EO model is used today. The eval sets are small and synthetic.
-- **+1 point:** build the rule-based extractor and show **LLM vs rules** on a frozen held-out set (≥25 reports) on screen, and run the Arabic agent live on stage with its tool-call trace visible.
+- **+1 point:** the LLM-vs-rules comparison was run and came out on par, so it adds honesty, not a gain. What would now add a point: a **blinded** test written by field crews where the LLM handles phrasing the rules miss, plus the Arabic agent run live on stage with its tool-call trace visible.
 - **Roadmap: 8/10.** Prithvi beats NDVI, the GNN beats residual localisation and Chronos beats the trend, each with a model card and a measured gain.
 
 | # | Criterion (weight) | Today | Roadmap | One line | Single biggest risk |
 |---|---|---|---|---|---|
 | 1 | Challenge Alignment (10%) | 6 | 7 | Water loss + wasted pumping energy (kWh/m³ range, CO₂ factor) fits "save energy" | Judges see it as governance, not green tech |
 | 2 | Problem & Impact (15%) | 7 | 8 | Sourced ministry figures (133,408 attacks 2013–2026; about 70% of NRW, a ministry estimate) | "Recovered m³" is expected, not field-verified |
-| 3 | Functionality & Practicality (20%) | 5 | 8 | End-to-end demo on one corridor, offline | About 3 hours of build time left |
+| 3 | Functionality & Practicality (20%) | 5 | 8 | End-to-end demo on one corridor, offline | Live demo stability (GPU memory headroom ~300 MiB, first model load) |
 | 4 | Technical Quality & Execution (15%) | 6 | 8 | Evidence labels enforced in the DB, measured model choice, reproducible pipelines | Scope vs "appropriately scoped for 12 hours" |
 | 5 | Innovation & Creativity (20%) | 6 | 8 | Two-signal fusion ranked by m³ per inspection hour; verbatim-provenance crew reports | Prior art (ASTERRA, Al-Bakri 2022) and the prior-work rule |
 | 6 | Open-Source AI Integration (15%) | 6 | 8 | See above | AI looks peripheral to the core engine |
