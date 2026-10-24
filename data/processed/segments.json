@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-24T13:06:41+00:00",
+ "generated_at": "2026-10-24T13:14:16+00:00",
  "region_id": "KRK",
  "label": "Simulated",
  "route_length_m": 20220.02095695042,
@@ -493,42 +493,42 @@
    },
    "nearby_fields": [
     {
-     "field_id": "KRK-F-003",
+     "field_id": "KRK-F-006",
      "dist_m": 337.4997919689313,
      "baseline_score": 0.6325
     },
     {
-     "field_id": "KRK-F-004",
+     "field_id": "KRK-F-007",
      "dist_m": 691.4666584591905,
      "baseline_score": 0.6323
     },
     {
      "field_id": "KRK-F-001",
      "dist_m": 696.4482426804325,
-     "baseline_score": 0.6414
+     "baseline_score": 0.6789
     },
     {
-     "field_id": "KRK-F-007",
+     "field_id": "KRK-F-003",
      "dist_m": 725.7859627392745,
-     "baseline_score": 0.6084
+     "baseline_score": 0.6459
     },
     {
-     "field_id": "KRK-F-005",
+     "field_id": "KRK-F-008",
      "dist_m": 790.4536183969382,
      "baseline_score": 0.6245
     },
     {
-     "field_id": "KRK-F-006",
+     "field_id": "KRK-F-002",
      "dist_m": 905.968985925762,
-     "baseline_score": 0.6144
+     "baseline_score": 0.6519
     },
     {
-     "field_id": "KRK-F-008",
+     "field_id": "KRK-F-004",
      "dist_m": 934.4369477638746,
-     "baseline_score": 0.5992
+     "baseline_score": 0.6367
     },
     {
-     "field_id": "KRK-F-010",
+     "field_id": "KRK-F-011",
      "dist_m": 976.369085795539,
      "baseline_score": 0.571
     }
@@ -539,11 +539,11 @@
     "field_id": "KRK-F-001",
     "field_evidence_id": "EV-S2-0001",
     "field_dist_m": 696.4482426804325,
-    "baseline_score": 0.6414,
+    "baseline_score": 0.6789,
     "lr_field": {
-     "mean": 1.917785364482653,
-     "lo": 1.3848412777219825,
-     "hi": 2.655828334546675
+     "mean": 2.279292177433747,
+     "lo": 1.5097324853873109,
+     "hi": 3.4411214439609066
     },
     "prior": 0.05,
     "posterior_line_only": {
@@ -552,14 +552,14 @@
      "hi": 0.9613017217065312
     },
     "posterior_field_only": {
-     "mean": 0.09308057514822565,
-     "lo": 0.06822941555076613,
-     "hi": 0.1223865872965808
+     "mean": 0.10955697952821358,
+     "lo": 0.07401209392707145,
+     "hi": 0.15295618594800686
     },
     "posterior_fused": {
-     "mean": 0.8019287076766214,
-     "lo": 0.4301103159466283,
-     "hi": 0.9799768034406653
+     "mean": 0.8225144644685248,
+     "lo": 0.46917241866966297,
+     "hi": 0.983407996560182
     },
     "volume_m3_day": {
      "mean": 521.6877782800439,
@@ -567,14 +567,14 @@
      "hi": 793.1100086472251
     },
     "expected_m3_day": {
-     "mean": 397.041387882202,
-     "lo": 157.87217322804347,
-     "hi": 672.4906644316843
+     "mean": 407.711493265318,
+     "lo": 168.03649116487256,
+     "hi": 682.4356630682181
     },
     "m3_per_inspection_hour": {
-     "mean": 158.81655515288082,
-     "lo": 63.148869291217395,
-     "hi": 268.9962657726737
+     "mean": 163.0845973061272,
+     "lo": 67.21459646594903,
+     "hi": 272.9742652272873
     },
     "travel_h": 1.0,
     "inspect_h": 1.5,
@@ -917,39 +917,39 @@
    },
    "nearby_fields": [
     {
-     "field_id": "KRK-F-009",
+     "field_id": "KRK-F-010",
      "dist_m": 156.92032508160642,
      "baseline_score": 0.5912
     },
     {
-     "field_id": "KRK-F-010",
+     "field_id": "KRK-F-011",
      "dist_m": 564.8272363584555,
      "baseline_score": 0.571
     },
     {
-     "field_id": "KRK-F-003",
+     "field_id": "KRK-F-006",
      "dist_m": 578.7793138592917,
      "baseline_score": 0.6325
     },
     {
-     "field_id": "KRK-F-002",
+     "field_id": "KRK-F-005",
      "dist_m": 579.9635019332673,
      "baseline_score": 0.6344
     },
     {
-     "field_id": "KRK-F-007",
+     "field_id": "KRK-F-003",
      "dist_m": 771.4976805835701,
-     "baseline_score": 0.6084
+     "baseline_score": 0.6459
     },
     {
-     "field_id": "KRK-F-006",
+     "field_id": "KRK-F-002",
      "dist_m": 941.1478397870455,
-     "baseline_score": 0.6144
+     "baseline_score": 0.6519
     },
     {
      "field_id": "KRK-F-001",
      "dist_m": 998.3073826536893,
-     "baseline_score": 0.6414
+     "baseline_score": 0.6789
     }
    ],
    "label": "Simulated",

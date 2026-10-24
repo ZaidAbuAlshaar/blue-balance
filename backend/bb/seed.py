@@ -119,7 +119,9 @@ def seed(path=DB_PATH):
         travel = _travel_h(props["centroid"])
         inspect = ASSUMPTIONS["inspect_h_field"]["value"]
         m3h = priority.m3_per_inspection_hour(p, vol, travel, inspect)
-        signals = [{"layer": "source", "signal": "new dry-season greenness (Sentinel-2)",
+        inside_cropland = props.get("isolation_m", 0) <= 10
+        observed = "new dry-season greenness (Sentinel-2)" + (", inside existing cropland (WorldCover)" if inside_cropland else "")
+        signals = [{"layer": "source", "signal": observed,
                     "baseline_score": round(props["baseline_score"], 2), "lr": _round_iv(lr, 2),
                     "evidence_id": props["evidence_id"], "label": "Observed"}]
         evidence_ids = [props["evidence_id"], assumption_ids["seed.prior_source"], assumption_ids["seed.kc_range"]]
@@ -147,7 +149,8 @@ def seed(path=DB_PATH):
             best = linked[0]
             lrs.append(field_lr[best])
             best_props = next(f["properties"] for f in fields if f["properties"]["field_id"] == best)
-            signals.append({"layer": "source", "signal": f"new irrigated field {best} within {radius} m of the segment",
+            signals.append({"layer": "source", "signal": f"new dry-season greenness at {best} within {radius} m of the segment"
+                            + (", inside existing cropland (WorldCover)" if best_props.get("isolation_m", 0) <= 10 else ""),
                             "lr": _round_iv(field_lr[best], 2), "evidence_id": best_props["evidence_id"],
                             "label": "Observed"})
             evidence_ids.append(best_props["evidence_id"])

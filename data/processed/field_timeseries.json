@@ -30,10 +30,10 @@
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.6284,
+   "green_fraction": 0.9867,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
@@ -51,10 +51,10 @@
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.4197,
+   "green_fraction": 0.9733,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,
@@ -72,294 +72,6 @@
   }
  ],
  "KRK-F-002": [
-  {
-   "year": 2017,
-   "date": "2017-08-26",
-   "ndvi_mean": 0.2345,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2018,
-   "date": "2018-08-31",
-   "ndvi_mean": 0.0854,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2019,
-   "date": "2019-09-20",
-   "ndvi_mean": 0.1018,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2020,
-   "date": "2020-09-29",
-   "ndvi_mean": 0.1109,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2022,
-   "date": "2022-08-25",
-   "ndvi_mean": 0.0858,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2023,
-   "date": "2023-08-20",
-   "ndvi_mean": 0.0887,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2025,
-   "date": "2025-07-30",
-   "ndvi_mean": 0.3434,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2026,
-   "date": "2026-08-24",
-   "ndvi_mean": 0.6282,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  }
- ],
- "KRK-F-003": [
-  {
-   "year": 2017,
-   "date": "2017-08-26",
-   "ndvi_mean": 0.1336,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2018,
-   "date": "2018-08-31",
-   "ndvi_mean": 0.1166,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2019,
-   "date": "2019-09-20",
-   "ndvi_mean": 0.2214,
-   "green_fraction": 0.193,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2020,
-   "date": "2020-09-29",
-   "ndvi_mean": 0.3921,
-   "green_fraction": 0.8772,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2022,
-   "date": "2022-08-25",
-   "ndvi_mean": 0.075,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2023,
-   "date": "2023-08-20",
-   "ndvi_mean": 0.0943,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2025,
-   "date": "2025-07-30",
-   "ndvi_mean": 0.6664,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2026,
-   "date": "2026-08-24",
-   "ndvi_mean": 0.6214,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  }
- ],
- "KRK-F-004": [
-  {
-   "year": 2017,
-   "date": "2017-08-26",
-   "ndvi_mean": 0.1273,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2018,
-   "date": "2018-08-31",
-   "ndvi_mean": 0.1179,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2019,
-   "date": "2019-09-20",
-   "ndvi_mean": 0.1794,
-   "green_fraction": 0.1667,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2020,
-   "date": "2020-09-29",
-   "ndvi_mean": 0.294,
-   "green_fraction": 0.4167,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2022,
-   "date": "2022-08-25",
-   "ndvi_mean": 0.4842,
-   "green_fraction": 0.9167,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2023,
-   "date": "2023-08-20",
-   "ndvi_mean": 0.1743,
-   "green_fraction": 0.1667,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2025,
-   "date": "2025-07-30",
-   "ndvi_mean": 0.4058,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2026,
-   "date": "2026-08-24",
-   "ndvi_mean": 0.5603,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  }
- ],
- "KRK-F-005": [
-  {
-   "year": 2017,
-   "date": "2017-08-26",
-   "ndvi_mean": 0.1824,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2018,
-   "date": "2018-08-31",
-   "ndvi_mean": 0.0936,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2019,
-   "date": "2019-09-20",
-   "ndvi_mean": 0.2566,
-   "green_fraction": 0.0833,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2020,
-   "date": "2020-09-29",
-   "ndvi_mean": 0.2528,
-   "green_fraction": 0.125,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2022,
-   "date": "2022-08-25",
-   "ndvi_mean": 0.1147,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2023,
-   "date": "2023-08-20",
-   "ndvi_mean": 0.3758,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2025,
-   "date": "2025-07-30",
-   "ndvi_mean": 0.5674,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2026,
-   "date": "2026-08-24",
-   "ndvi_mean": 0.5024,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  }
- ],
- "KRK-F-006": [
   {
    "year": 2017,
    "date": "2017-08-26",
@@ -390,10 +102,10 @@
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.1103,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
@@ -411,10 +123,10 @@
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.7001,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,
@@ -431,7 +143,7 @@
    "valid_fraction": 1.0
   }
  ],
- "KRK-F-007": [
+ "KRK-F-003": [
   {
    "year": 2017,
    "date": "2017-08-26",
@@ -462,10 +174,10 @@
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.5517,
+   "green_fraction": 0.9836,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
@@ -483,10 +195,10 @@
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.5902,
+   "green_fraction": 0.9672,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,
@@ -503,7 +215,7 @@
    "valid_fraction": 1.0
   }
  ],
- "KRK-F-008": [
+ "KRK-F-004": [
   {
    "year": 2017,
    "date": "2017-08-26",
@@ -534,10 +246,10 @@
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.7512,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
@@ -555,10 +267,10 @@
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.3911,
+   "green_fraction": 0.9286,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,
@@ -575,151 +287,295 @@
    "valid_fraction": 1.0
   }
  ],
- "KRK-F-009": [
+ "KRK-F-005": [
   {
    "year": 2017,
    "date": "2017-08-26",
-   "ndvi_mean": 0.2339,
+   "ndvi_mean": 0.2345,
    "green_fraction": 0.0,
    "valid_fraction": 1.0
   },
   {
    "year": 2018,
    "date": "2018-08-31",
-   "ndvi_mean": 0.1654,
+   "ndvi_mean": 0.0854,
    "green_fraction": 0.0,
    "valid_fraction": 1.0
   },
   {
    "year": 2019,
    "date": "2019-09-20",
-   "ndvi_mean": 0.1712,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2020,
-   "date": "2020-09-29",
-   "ndvi_mean": 0.1211,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2022,
-   "date": "2022-08-25",
-   "ndvi_mean": 0.2491,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2023,
-   "date": "2023-08-20",
-   "ndvi_mean": 0.1076,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
-  },
-  {
-   "year": 2025,
-   "date": "2025-07-30",
-   "ndvi_mean": 0.3899,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2026,
-   "date": "2026-08-24",
-   "ndvi_mean": 0.479,
-   "green_fraction": 1.0,
-   "valid_fraction": 1.0
-  }
- ],
- "KRK-F-010": [
-  {
-   "year": 2017,
-   "date": "2017-08-26",
    "ndvi_mean": 0.1018,
    "green_fraction": 0.0,
    "valid_fraction": 1.0
   },
   {
-   "year": 2018,
-   "date": "2018-08-31",
-   "ndvi_mean": 0.0823,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
-   "year": 2019,
-   "date": "2019-09-20",
-   "ndvi_mean": 0.089,
-   "green_fraction": 0.0,
-   "valid_fraction": 1.0
-  },
-  {
    "year": 2020,
    "date": "2020-09-29",
-   "ndvi_mean": 0.147,
+   "ndvi_mean": 0.1109,
    "green_fraction": 0.0,
    "valid_fraction": 1.0
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.0964,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
    "date": "2022-08-25",
-   "ndvi_mean": 0.1509,
+   "ndvi_mean": 0.0858,
    "green_fraction": 0.0,
    "valid_fraction": 1.0
   },
   {
    "year": 2023,
    "date": "2023-08-20",
-   "ndvi_mean": 0.2361,
-   "green_fraction": 0.0952,
+   "ndvi_mean": 0.0887,
+   "green_fraction": 0.0,
    "valid_fraction": 1.0
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.0833,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,
    "date": "2025-07-30",
-   "ndvi_mean": 0.3601,
+   "ndvi_mean": 0.3434,
    "green_fraction": 1.0,
    "valid_fraction": 1.0
   },
   {
    "year": 2026,
    "date": "2026-08-24",
-   "ndvi_mean": 0.3911,
+   "ndvi_mean": 0.6282,
    "green_fraction": 1.0,
    "valid_fraction": 1.0
   }
  ],
- "KRK-F-011": [
+ "KRK-F-006": [
+  {
+   "year": 2017,
+   "date": "2017-08-26",
+   "ndvi_mean": 0.1336,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2018,
+   "date": "2018-08-31",
+   "ndvi_mean": 0.1166,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2019,
+   "date": "2019-09-20",
+   "ndvi_mean": 0.2214,
+   "green_fraction": 0.193,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2020,
+   "date": "2020-09-29",
+   "ndvi_mean": 0.3921,
+   "green_fraction": 0.8772,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2021,
+   "date": "2021-08-15",
+   "ndvi_mean": 0.1908,
+   "green_fraction": 0.193,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2022,
+   "date": "2022-08-25",
+   "ndvi_mean": 0.075,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2023,
+   "date": "2023-08-20",
+   "ndvi_mean": 0.0943,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2024,
+   "date": "2024-08-14",
+   "ndvi_mean": 0.2139,
+   "green_fraction": 0.2281,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2025,
+   "date": "2025-07-30",
+   "ndvi_mean": 0.6664,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2026,
+   "date": "2026-08-24",
+   "ndvi_mean": 0.6214,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  }
+ ],
+ "KRK-F-007": [
+  {
+   "year": 2017,
+   "date": "2017-08-26",
+   "ndvi_mean": 0.1273,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2018,
+   "date": "2018-08-31",
+   "ndvi_mean": 0.1179,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2019,
+   "date": "2019-09-20",
+   "ndvi_mean": 0.1794,
+   "green_fraction": 0.1667,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2020,
+   "date": "2020-09-29",
+   "ndvi_mean": 0.294,
+   "green_fraction": 0.4167,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2021,
+   "date": "2021-08-15",
+   "ndvi_mean": 0.1908,
+   "green_fraction": 0.1667,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2022,
+   "date": "2022-08-25",
+   "ndvi_mean": 0.4842,
+   "green_fraction": 0.9167,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2023,
+   "date": "2023-08-20",
+   "ndvi_mean": 0.1743,
+   "green_fraction": 0.1667,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2024,
+   "date": "2024-08-14",
+   "ndvi_mean": 0.2237,
+   "green_fraction": 0.375,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2025,
+   "date": "2025-07-30",
+   "ndvi_mean": 0.4058,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2026,
+   "date": "2026-08-24",
+   "ndvi_mean": 0.5603,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  }
+ ],
+ "KRK-F-008": [
+  {
+   "year": 2017,
+   "date": "2017-08-26",
+   "ndvi_mean": 0.1824,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2018,
+   "date": "2018-08-31",
+   "ndvi_mean": 0.0936,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2019,
+   "date": "2019-09-20",
+   "ndvi_mean": 0.2566,
+   "green_fraction": 0.0833,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2020,
+   "date": "2020-09-29",
+   "ndvi_mean": 0.2528,
+   "green_fraction": 0.125,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2021,
+   "date": "2021-08-15",
+   "ndvi_mean": 0.1246,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2022,
+   "date": "2022-08-25",
+   "ndvi_mean": 0.1147,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2023,
+   "date": "2023-08-20",
+   "ndvi_mean": 0.3758,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2024,
+   "date": "2024-08-14",
+   "ndvi_mean": 0.272,
+   "green_fraction": 0.4167,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2025,
+   "date": "2025-07-30",
+   "ndvi_mean": 0.5674,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2026,
+   "date": "2026-08-24",
+   "ndvi_mean": 0.5024,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  }
+ ],
+ "KRK-F-009": [
   {
    "year": 2017,
    "date": "2017-08-26",
@@ -750,10 +606,10 @@
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.1314,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
@@ -771,10 +627,10 @@
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.7513,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,
@@ -787,6 +643,150 @@
    "year": 2026,
    "date": "2026-08-24",
    "ndvi_mean": 0.4801,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  }
+ ],
+ "KRK-F-010": [
+  {
+   "year": 2017,
+   "date": "2017-08-26",
+   "ndvi_mean": 0.2339,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2018,
+   "date": "2018-08-31",
+   "ndvi_mean": 0.1654,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2019,
+   "date": "2019-09-20",
+   "ndvi_mean": 0.1712,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2020,
+   "date": "2020-09-29",
+   "ndvi_mean": 0.1211,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2021,
+   "date": "2021-08-15",
+   "ndvi_mean": 0.3394,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2022,
+   "date": "2022-08-25",
+   "ndvi_mean": 0.2491,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2023,
+   "date": "2023-08-20",
+   "ndvi_mean": 0.1076,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2024,
+   "date": "2024-08-14",
+   "ndvi_mean": 0.2049,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2025,
+   "date": "2025-07-30",
+   "ndvi_mean": 0.3899,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2026,
+   "date": "2026-08-24",
+   "ndvi_mean": 0.479,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  }
+ ],
+ "KRK-F-011": [
+  {
+   "year": 2017,
+   "date": "2017-08-26",
+   "ndvi_mean": 0.1018,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2018,
+   "date": "2018-08-31",
+   "ndvi_mean": 0.0823,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2019,
+   "date": "2019-09-20",
+   "ndvi_mean": 0.089,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2020,
+   "date": "2020-09-29",
+   "ndvi_mean": 0.147,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2021,
+   "date": "2021-08-15",
+   "ndvi_mean": 0.1453,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2022,
+   "date": "2022-08-25",
+   "ndvi_mean": 0.1509,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2023,
+   "date": "2023-08-20",
+   "ndvi_mean": 0.2361,
+   "green_fraction": 0.0952,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2024,
+   "date": "2024-08-14",
+   "ndvi_mean": 0.2216,
+   "green_fraction": 0.0238,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2025,
+   "date": "2025-07-30",
+   "ndvi_mean": 0.3601,
+   "green_fraction": 1.0,
+   "valid_fraction": 1.0
+  },
+  {
+   "year": 2026,
+   "date": "2026-08-24",
+   "ndvi_mean": 0.3911,
    "green_fraction": 1.0,
    "valid_fraction": 1.0
   }
@@ -822,10 +822,10 @@
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.091,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
@@ -843,10 +843,10 @@
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.5445,
+   "green_fraction": 0.9796,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,
@@ -894,10 +894,10 @@
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.2466,
+   "green_fraction": 0.2121,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
@@ -915,10 +915,10 @@
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.3133,
+   "green_fraction": 0.4848,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,
@@ -966,10 +966,10 @@
   },
   {
    "year": 2021,
-   "date": "2021-09-27",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2021-08-15",
+   "ndvi_mean": 0.1724,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2022,
@@ -987,10 +987,10 @@
   },
   {
    "year": 2024,
-   "date": "2024-09-01",
-   "ndvi_mean": null,
-   "green_fraction": null,
-   "valid_fraction": 0.0
+   "date": "2024-08-14",
+   "ndvi_mean": 0.1457,
+   "green_fraction": 0.0,
+   "valid_fraction": 1.0
   },
   {
    "year": 2025,

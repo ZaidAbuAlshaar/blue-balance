@@ -420,8 +420,11 @@ def main() -> int:
             "inside or at the edge of established farm blocks, so f_isolation is near 0 for "
             "them. The chips show many are plots inside existing farms that were fallow in "
             "2017-2018 (crop rotation is a likely alternative explanation), not new desert farms.",
-            f"Years excluded as unusable: {excluded} (see scenes[].quality_flag); field series "
-            "carry null for them and persistence_years counts them as not green.",
+        ] + ([f"Years excluded as unusable: {excluded} (see scenes[].quality_flag); field series "
+              "carry null for them and persistence_years counts them as not green."]
+             if excluded else []) + [
+            "2021 and 2024 scenes were re-selected by pipeline/refetch_year.py (the first picks "
+            "were corrupt / all-NaN); see raw/manifest.json s2_rejected."
         ],
     }
     (OUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1),
