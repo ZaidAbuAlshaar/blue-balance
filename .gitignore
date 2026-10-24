@@ -1,0 +1,19 @@
+# Internal planning notes and throwaway spikes stay local
+analysis/
+spikes/
+HANDOFF.md
+
+# Dependencies and build output
+node_modules/
+web/dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Demo account passwords (local demo only, never committed)
+data/synthetic/demo_users.json
+
+# Local runtime state
+*.sqlite
+*.sqlite-journal
+.env

@@ -1,0 +1,8 @@
+baseline MiB 0
+load qwen3.5:4b  wall/load s (6.43, 5.97) | MiB 3965
+load gemma4      wall/load s (14.61, 11.3) | MiB 4265
+  ps gemma4:e4b-it-qat size 3117699562 size_vram 3117699562 on_gpu % 100.0
+warm qwen3.5:4b  wall/load s (5.3, 4.85) | MiB 7892
+warm gemma4      wall/load s (0.55, 0.01) | MiB 7892
+  ps after gemma4:e4b-it-qat size_vram 3117699562
+  ps after qwen3.5:4b size_vram 3278907636

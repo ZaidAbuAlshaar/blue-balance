@@ -1,0 +1,2 @@
+# Supply-chain rule: only install releases published at least 14 days ago (value in minutes).
+minimumReleaseAge: 20160
