@@ -1,0 +1,35 @@
+E01 answer True 5.326
+E02 answer True 2.628
+E03 answer True 3.478
+E04 answer True 3.89
+E05 answer True 4.731
+E06 answer True 3.91
+E07 answer True 3.484
+E08 answer True 7.718
+E09 refusal True 0.002
+E10 refusal True 0.0
+E11 refusal True 0.0
+E12 template True 7.128
+{
+ "items": 12,
+ "accuracy": "12/12",
+ "tool_call_accuracy": "9/9",
+ "refusal_correct": "3/3",
+ "false_refusals": "0/9",
+ "raw_answers_failing_check": "2/9",
+ "raw_answers_with_unmatched_numbers": "1/9",
+ "raw_answers_with_unknown_ids": "1/9",
+ "raw_unmatched_number_tokens": 2,
+ "shipped_answers_failing_check": "0/12",
+ "modes": {
+  "answer": 8,
+  "template": 1,
+  "refusal": 3,
+  "no_evidence": 0
+ },
+ "rewrites_total": 3,
+ "latency_all_p50_s": 3.69,
+ "latency_all_p95_s": 7.39,
+ "latency_llm_items_p50_s": 3.91,
+ "latency_llm_items_p95_s": 7.48
+}

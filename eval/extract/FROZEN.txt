@@ -1,0 +1,4 @@
+heldout.json SHA-256: 11bce840bb06b2e1dd700ca6ec3cfea8ed2b028183f918b992f4b42367adfb14
+Frozen at: 2026-10-24T16:07:08+03:00
+Frozen BEFORE any extractor model run and before rules.py was written.
+Label: Synthetic (Simulated). 30 reports H01-H30.

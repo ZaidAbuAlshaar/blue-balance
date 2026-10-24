@@ -149,6 +149,21 @@ Prithvi, Chronos and a GNN are **not integrated today**. Adding them without lab
   - The first load from disk takes 94 s.
   - A small dev set.
 
+#### Role 2 held-out result (measured after approval, 16:07–16:30)
+The frozen set has 30 new synthetic reports. `eval/extract/heldout.json` has SHA-256 `11bce840…adfb14`, frozen at 16:07 before any model run and before the rules were written. Full numbers are in `eval/extract/RESULTS.md`.
+
+| Shipped result (after span check + guard) | Gemma 4 LLM | Rules baseline |
+|---|---|---|
+| Field accuracy | **90.9%** | **92.3%** |
+| Span exact-match | 100% | 100% |
+| Empty when unsupported | 95.0% | 96.3% |
+| Sent to crew confirmation | 7 | 7 |
+
+- **On this set the LLM does NOT beat the rules.** Both caught the 2 planted injections and the real severity conflict.
+- **Caveat: the set is not blinded.** The same agent wrote the reports, the gold answers and the rules, which favours the rules. The scorer also cannot read number words such as «نص انش», which costs the LLM about 2 cells.
+- **The fair test** is a blinded set written by a teammate who has seen neither the prompts nor the rules. That is NEEDS-ZAID.
+- **Until then, the honest claim is** "LLM and rules are on par on our synthetic held-out set". Do not claim the LLM is better.
+
 ### Role 3: Arabic speech-to-text (extra today)
 - [x] **Candidates:** `Systran/faster-whisper-large-v3` (local), `openai/whisper-large-v3-turbo`, `openai/whisper-large-v3`.
 - [x] **Pick:** faster-whisper large-v3. It is already on disk, and its hash matches HF.
@@ -258,6 +273,9 @@ These scores are our own judgement (**Hypothesis**), not measurements. "Today" a
 - **D9. Qwen3.5-9B.** Add it to the bake-off only if the download finishes before the build starts; otherwise skip it. The 4B already scores 10/10 at about 1 s. **Recommended: skip if it is not done by approval time.**
 
 ## 5. Open questions (for Zaid / the organizers)
+
+> **Update 16:15 (from Zaid):** calling open-source / open-weight models **through an API** is acceptable for the event. This is Zaid's information, not a written organizer statement. It answers Q2 (Gemma 4 via the Gemini API counts) and opens a bigger hosted open-weight model as an option.
+> **Kept as default:** local Ollama. It is measured, it works offline on the hotspot, and it keeps data on the laptop, which supports criterion 7. A hosted API stays an optional switch, and needs an API key in `.env` (NEEDS-ZAID).
 
 1. What is the exact eligible-model list? Do "Qwen" and "Gemma" as encouraged examples mean eligible?
 2. Does Gemma 4 running locally through Ollama count for "Best Use of Gemma 4"? The challenge text mentions the Gemini API.

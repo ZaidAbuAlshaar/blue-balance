@@ -1,0 +1,188 @@
+H01 4.362 
+H02 4.213 
+H03 3.206 
+H04 3.579 
+H05 3.832 
+H06 3.356 
+H07 4.162 
+H08 3.979 
+H09 4.12 
+H10 3.989 
+H11 2.896 
+H12 4.383 
+H13 4.237 
+H14 3.656 
+H15 3.23 
+H16 3.576 
+H17 3.135 
+H18 3.837 
+H19 3.469 
+H20 3.458 
+H21 3.448 
+H22 3.21 
+H23 3.942 
+H24 3.286 
+H25 4.222 
+H26 4.114 
+H27 3.806 
+H28 3.667 
+H29 3.905 
+H30 3.996 
+{
+ "reports": 30,
+ "heldout_sha256": "11bce840bb06b2e1dd700ca6ec3cfea8ed2b028183f918b992f4b42367adfb14",
+ "gold_lint_issues": [],
+ "llm_errors": 0,
+ "llm_raw_model_output": {
+  "field_accuracy": 0.927,
+  "cells_correct": 266,
+  "cells_scored": 287,
+  "span_exact_match": 0.972,
+  "fields_filled": 212,
+  "empty_when_unsupported": 0.938,
+  "cells_unsupported": 80,
+  "needs_confirmation": 0,
+  "needs_confirmation_gold_in_candidates": 0,
+  "per_field_accuracy": {
+   "site_id": "30/30",
+   "location": "27/28",
+   "nearest_asset": "22/27",
+   "observation_type": "29/30",
+   "water_use": "27/30",
+   "flow_or_size": "22/30",
+   "evidence_attached": "29/30",
+   "severity": "27/29",
+   "datetime": "30/30",
+   "notes_action": "23/23"
+  }
+ },
+ "llm_after_span_verify": {
+  "field_accuracy": 0.923,
+  "cells_correct": 265,
+  "cells_scored": 287,
+  "span_exact_match": 1.0,
+  "fields_filled": 207,
+  "empty_when_unsupported": 0.95,
+  "cells_unsupported": 80,
+  "needs_confirmation": 0,
+  "needs_confirmation_gold_in_candidates": 0,
+  "per_field_accuracy": {
+   "site_id": "30/30",
+   "location": "27/28",
+   "nearest_asset": "22/27",
+   "observation_type": "28/30",
+   "water_use": "27/30",
+   "flow_or_size": "22/30",
+   "evidence_attached": "29/30",
+   "severity": "28/29",
+   "datetime": "30/30",
+   "notes_action": "22/23"
+  }
+ },
+ "llm_final_after_guard": {
+  "field_accuracy": 0.909,
+  "cells_correct": 261,
+  "cells_scored": 287,
+  "span_exact_match": 1.0,
+  "fields_filled": 200,
+  "empty_when_unsupported": 0.95,
+  "cells_unsupported": 80,
+  "needs_confirmation": 7,
+  "needs_confirmation_gold_in_candidates": 6,
+  "per_field_accuracy": {
+   "site_id": "30/30",
+   "location": "27/28",
+   "nearest_asset": "22/27",
+   "observation_type": "24/30",
+   "water_use": "27/30",
+   "flow_or_size": "22/30",
+   "evidence_attached": "29/30",
+   "severity": "28/29",
+   "datetime": "30/30",
+   "notes_action": "22/23"
+  }
+ },
+ "rules_raw": {
+  "field_accuracy": 0.941,
+  "cells_correct": 270,
+  "cells_scored": 287,
+  "span_exact_match": 1.0,
+  "fields_filled": 205,
+  "empty_when_unsupported": 0.963,
+  "cells_unsupported": 80,
+  "needs_confirmation": 0,
+  "needs_confirmation_gold_in_candidates": 0,
+  "per_field_accuracy": {
+   "site_id": "30/30",
+   "location": "24/28",
+   "nearest_asset": "22/27",
+   "observation_type": "30/30",
+   "water_use": "30/30",
+   "flow_or_size": "27/30",
+   "evidence_attached": "29/30",
+   "severity": "28/29",
+   "datetime": "28/30",
+   "notes_action": "22/23"
+  }
+ },
+ "rules_final_after_guard": {
+  "field_accuracy": 0.923,
+  "cells_correct": 265,
+  "cells_scored": 287,
+  "span_exact_match": 1.0,
+  "fields_filled": 198,
+  "empty_when_unsupported": 0.963,
+  "cells_unsupported": 80,
+  "needs_confirmation": 7,
+  "needs_confirmation_gold_in_candidates": 6,
+  "per_field_accuracy": {
+   "site_id": "30/30",
+   "location": "24/28",
+   "nearest_asset": "22/27",
+   "observation_type": "25/30",
+   "water_use": "30/30",
+   "flow_or_size": "27/30",
+   "evidence_attached": "29/30",
+   "severity": "28/29",
+   "datetime": "28/30",
+   "notes_action": "22/23"
+  }
+ },
+ "llm_raw_span_exact_match": "206/212",
+ "guard_expectations_llm": [
+  {
+   "id": "H08",
+   "expect": "possible_injection",
+   "met": true
+  },
+  {
+   "id": "H09",
+   "expect": "possible_injection",
+   "met": true
+  },
+  {
+   "id": "H22",
+   "expect": "needs_confirmation:severity",
+   "met": true
+  }
+ ],
+ "guard_expectations_rules": [
+  {
+   "id": "H08",
+   "expect": "possible_injection",
+   "met": true
+  },
+  {
+   "id": "H09",
+   "expect": "possible_injection",
+   "met": true
+  },
+  {
+   "id": "H22",
+   "expect": "needs_confirmation:severity",
+   "met": true
+  }
+ ],
+ "llm_latency_median_s": 3.82,
+ "llm_latency_p95_s": 4.24
+}
