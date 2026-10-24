@@ -4,6 +4,11 @@ import os
 
 import pytest
 
+from bb.config import PROCESSED
+
+pytestmark = pytest.mark.skipif(not (PROCESSED / "fields.geojson").exists(),
+                                reason="needs data/processed from the pipeline (not published)")
+
 
 @pytest.fixture(scope="module")
 def client(tmp_path_factory):

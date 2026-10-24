@@ -167,8 +167,8 @@ def template_answer(tool_calls):
             lines.append(f"- {r.get('case_id')}: p {_iv(r.get('p'))} · m³/day {_iv(r.get('volume_m3_day'))} [{ev} · {label}]")
         elif name == "explain_ranking":
             t = r.get("terms", {})
-            lines.append(f"- {r.get('case_id')} rank {r.get('rank')}: volume_m3_day {t.get('volume_m3_day')} · "
-                         f"probability {t.get('probability')} · time_h {t.get('time_h')} [{label}]")
+            lines.append(f"- {r.get('case_id')} · الترتيب rank {r.get('rank')} · الحجم المتوقع m³/day {_iv(t.get('volume_m3_day'))} · "
+                         f"الاحتمال p {_iv(t.get('probability'))} · الوقت h {t.get('time_h')} [{label}]")
             for c in r.get("layer_contributions", []):
                 lines.append(f"  - {c.get('layer')}: {c.get('signal')} [{c.get('evidence_id')}]")
         elif name == "propose_next_measurement":

@@ -5,6 +5,10 @@ from pathlib import Path
 import pytest
 
 PROCESSED = Path(__file__).resolve().parents[3] / "data" / "processed"
+
+# Candidate geometries and chips are not published (privacy); run the pipeline to create them.
+pytestmark = pytest.mark.skipif(not (PROCESSED / "fields.geojson").exists(),
+                                reason="run pipeline/process_fields.py first")
 YEARS = list(range(2017, 2027))
 TOP_CHIPS = 10
 FIELD_PROPS = {

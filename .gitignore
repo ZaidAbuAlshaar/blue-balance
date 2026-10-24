@@ -17,3 +17,11 @@ data/synthetic/demo_users.json
 *.sqlite
 *.sqlite-journal
 .env
+
+# Playwright output
+web/test-results/
+web/playwright-report/
+
+# Candidate geometries and chips: real farm plots, not published (regenerate with the pipeline)
+data/processed/fields.geojson
+data/processed/chips/
