@@ -7,8 +7,8 @@
   "seed": 42,
   "num_ctx": 8192
  },
- "started_utc": "2026-10-24T13:17:37.784799+00:00",
- "finished_utc": "2026-10-24T13:18:20.090661+00:00",
+ "started_utc": "2026-10-24T13:21:45.549297+00:00",
+ "finished_utc": "2026-10-24T13:22:27.238331+00:00",
  "summary": {
   "items": 12,
   "accuracy": "12/12",
@@ -16,9 +16,9 @@
   "refusal_correct": "3/3",
   "false_refusals": "0/9",
   "raw_answers_failing_check": "2/9",
-  "raw_answers_with_unmatched_numbers": "1/9",
-  "raw_answers_with_unknown_ids": "1/9",
-  "raw_unmatched_number_tokens": 2,
+  "raw_answers_with_unmatched_numbers": "2/9",
+  "raw_answers_with_unknown_ids": "0/9",
+  "raw_unmatched_number_tokens": 5,
   "shipped_answers_failing_check": "0/12",
   "modes": {
    "answer": 8,
@@ -26,11 +26,11 @@
    "refusal": 3,
    "no_evidence": 0
   },
-  "rewrites_total": 3,
+  "rewrites_total": 4,
   "latency_all_p50_s": 3.69,
-  "latency_all_p95_s": 7.39,
-  "latency_llm_items_p50_s": 3.91,
-  "latency_llm_items_p95_s": 7.48
+  "latency_all_p95_s": 6.58,
+  "latency_llm_items_p50_s": 4.4,
+  "latency_llm_items_p95_s": 6.79
  },
  "rows": [
   {
@@ -41,7 +41,7 @@
    "question": "شو أول ٣ حالات بالكرك؟",
    "expected_tool": "get_priority_queue",
    "mode": "answer",
-   "answer": "أول ٣ حالات في الكرك حسب الأولوية هي:\n\n1. **KRK-T-007** (خط نقل) - متوسط 21 متر مكعب لكل ساعة فحص، مع احتمال متوسط 62% [EV-SIM-101]\n2. **KRK-L-003** (توزيع) - متوسط 6.5 متر مكعب لكل ساعة فحص، مع احتمال متوسط 48% [EV-SIM-102]\n3. **KRK-F-012** (مصدر) - متوسط 4.2 متر مكعب لكل ساعة فحص، مع احتمال متوسط 35% [EV-SIM-103]\n\nهل تريد تفاصيل أكثر عن أي حالة من هذه الحالات؟",
+   "answer": "أول ٣ حالات في الكرك حسب قائمة الانتظار هي:\n\n1. **KRK-T-007** (طبقة النقل)\n   - متوسط الحجم المفقود: 21 متر مكعب/ساعة (نطاق: 9–38 متر مكعب) [EV-SIM-101]\n   - احتمالية وجود مشكلة: 62% (41–79%)\n\n2. **KRK-L-003** (طبقة التوزيع)\n   - متوسط الحجم المفقود: 6.5 متر مكعب/ساعة (نطاق: 2.1–12 متر مكعب) [EV-SIM-102]\n   - احتمالية وجود مشكلة: 48% (30–66%)\n\n3. **KRK-F-012** (طبقة المصدر)\n   - متوسط الحجم المفقود: 4.2 متر مكعب/ساعة (نطاق: 0.8–9.5 متر مكعب) [EV-SIM-103]\n   - احتمالية وجود مشكلة: 35% (18–55%)\n\nهذه الأرقام تقديرية فقط وتستخدم لترتيب عمليات الفحص حسب العائد المتوقع.",
    "tool_calls": [
     {
      "name": "get_priority_queue",
@@ -156,7 +156,23 @@
       "evidence_id": "EV-SIM-101"
      },
      {
+      "text": "9",
+      "evidence_id": "EV-SIM-101"
+     },
+     {
+      "text": "38",
+      "evidence_id": "EV-SIM-101"
+     },
+     {
       "text": "62%",
+      "evidence_id": "EV-SIM-101"
+     },
+     {
+      "text": "41",
+      "evidence_id": "EV-SIM-101"
+     },
+     {
+      "text": "79%",
       "evidence_id": "EV-SIM-101"
      },
      {
@@ -164,7 +180,23 @@
       "evidence_id": "EV-SIM-102"
      },
      {
+      "text": "2.1",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
+      "text": "12",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
       "text": "48%",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
+      "text": "30",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
+      "text": "66%",
       "evidence_id": "EV-SIM-102"
      },
      {
@@ -172,26 +204,42 @@
       "evidence_id": "EV-SIM-103"
      },
      {
+      "text": "0.8",
+      "evidence_id": "EV-SIM-101"
+     },
+     {
+      "text": "9.5",
+      "evidence_id": "EV-SIM-103"
+     },
+     {
       "text": "35%",
+      "evidence_id": "EV-SIM-103"
+     },
+     {
+      "text": "18",
+      "evidence_id": "EV-SIM-103"
+     },
+     {
+      "text": "55%",
       "evidence_id": "EV-SIM-103"
      }
     ],
-    "numbers_checked": 7
+    "numbers_checked": 19
    },
    "raw_first_answer_ok": true,
    "raw_first_unmatched": [],
    "raw_first_ids_unknown": [],
-   "wall_s": 5.326,
+   "wall_s": 5.637,
    "llm_calls": [
     {
-     "wall_s": 2.254,
-     "total_s": 2.235,
+     "wall_s": 1.163,
+     "total_s": 1.136,
      "eval_count": 41
     },
     {
-     "wall_s": 2.88,
-     "total_s": 2.877,
-     "eval_count": 161
+     "wall_s": 4.305,
+     "total_s": 4.304,
+     "eval_count": 272
     }
    ]
   },
@@ -203,7 +251,7 @@
    "question": "What is the probability for KRK-T-007?",
    "expected_tool": "query_posterior",
    "mode": "answer",
-   "answer": "For case KRK-T-007:\n- Probability of anomaly: mean 62% [EV-SIM-101] (range: 41% to 79%)\n- Expected lost volume: mean 310 m³/day [EV-SIM-101] (range: 140 to 560 m³/day)",
+   "answer": "For case KRK-T-007:\n- Probability of an anomaly: 62% (41–79%) [EV-SIM-101]\n- Estimated lost volume: 310 m³/day (140–560 m³/day) [EV-SIM-101]\n\nThese are estimates for ranking inspections, not confirmed losses.",
    "tool_calls": [
     {
      "name": "query_posterior",
@@ -274,7 +322,7 @@
       "evidence_id": "EV-SIM-101"
      },
      {
-      "text": "41%",
+      "text": "41",
       "evidence_id": "EV-SIM-101"
      },
      {
@@ -299,17 +347,17 @@
    "raw_first_answer_ok": true,
    "raw_first_unmatched": [],
    "raw_first_ids_unknown": [],
-   "wall_s": 2.628,
+   "wall_s": 2.316,
    "llm_calls": [
     {
-     "wall_s": 0.8,
-     "total_s": 0.796,
+     "wall_s": 0.751,
+     "total_s": 0.737,
      "eval_count": 34
     },
     {
-     "wall_s": 1.482,
-     "total_s": 1.48,
-     "eval_count": 82
+     "wall_s": 1.395,
+     "total_s": 1.394,
+     "eval_count": 84
     }
    ]
   },
@@ -321,7 +369,7 @@
    "question": "ليش KRK-T-007 طالعة بأول القائمة؟",
    "expected_tool": "explain_ranking",
    "mode": "answer",
-   "answer": "KRK-T-007 في أول القائمة لأنها تعطي أكبر عائد متوقع لكل ساعة فحص، وذلك بناءً على:\n\n- حجم المياه المفقودة المتوقع: 310 متر مكعب يومياً [EV-SIM-101]\n- احتمال وجود مشكلة: 62%\n- وقت الفحص المطلوب: 2.5 ساعة\n\nالسبب الرئيسي لترتيبها هو أن نسبة الإشارة إلى الضوضاء في طبقة \"transmission\" عالية جداً (نسبة احتمالية 3.4)، مما يشير إلى وجود انحراف محتمل كبير في هذا الموقع.",
+   "answer": "KRK-T-007 في أول القائمة لأنها تعطي أعلى عائد متوقع لكل ساعة فحص، بناءً على البيانات الحالية:\n\n- **حجم المياه المفقودة المتوقع**: 310 متر مكعب يومياً [EV-SIM-101]\n- **احتمالية وجود مشكلة**: 62% [EV-SIM-101]\n- **وقت الفحص المطلوب**: 2.5 ساعة [EV-SIM-101]\n\nالسبب الرئيسي لرتبتها الأولى هو حجم المياه المفقودة المتوقع الكبير (310 متر مكعب يومياً) مقارنة بالوقت اللازم للفحص (2.5 ساعة)، مما يعطيها أعلى قيمة \"متر مكعب/ساعة\" في قائمة الأولويات.",
    "tool_calls": [
     {
      "name": "explain_ranking",
@@ -400,26 +448,30 @@
       "evidence_id": null
      },
      {
-      "text": "3.4",
-      "evidence_id": "EV-SIM-101"
+      "text": "310",
+      "evidence_id": null
+     },
+     {
+      "text": "2.5",
+      "evidence_id": null
      }
     ],
-    "numbers_checked": 4
+    "numbers_checked": 5
    },
    "raw_first_answer_ok": true,
    "raw_first_unmatched": [],
    "raw_first_ids_unknown": [],
-   "wall_s": 3.478,
+   "wall_s": 3.562,
    "llm_calls": [
     {
-     "wall_s": 0.844,
-     "total_s": 0.823,
+     "wall_s": 0.783,
+     "total_s": 0.767,
      "eval_count": 35
     },
     {
-     "wall_s": 2.257,
-     "total_s": 2.255,
-     "eval_count": 127
+     "wall_s": 2.613,
+     "total_s": 2.611,
+     "eval_count": 162
     }
    ]
   },
@@ -431,7 +483,7 @@
    "question": "Why is KRK-T-007 ranked above KRK-L-003?",
    "expected_tool": "explain_ranking",
    "mode": "answer",
-   "answer": "KRK-T-007 is ranked above KRK-L-003 because it has a higher expected recoverable volume per inspection hour:\n\n*   **KRK-T-007**: Expected to recover 310 m³/day [EV-SIM-101].\n*   **KRK-L-003**: Expected to recover 95 m³/day [EV-SIM-102].\n\nBoth cases have the same inspection time (2.5 hours), so the ranking is determined by the volume potential.",
+   "answer": "KRK-T-007 is ranked above KRK-L-003 because it has a higher expected recoverable volume per inspection hour:\n\n*   **KRK-T-007**: Expected volume of 310 m³/day with a probability of 62% [EV-SIM-101].\n*   **KRK-L-003**: Expected volume of 95 m³/day with a probability of 48% [EV-SIM-102].\n\nBoth cases have the same estimated inspection time (2.5 hours), so the ranking is driven by the higher potential water loss at KRK-T-007.",
    "tool_calls": [
     {
      "name": "explain_ranking",
@@ -534,7 +586,15 @@
       "evidence_id": null
      },
      {
+      "text": "62%",
+      "evidence_id": null
+     },
+     {
       "text": "95",
+      "evidence_id": null
+     },
+     {
+      "text": "48%",
       "evidence_id": null
      },
      {
@@ -542,22 +602,22 @@
       "evidence_id": null
      }
     ],
-    "numbers_checked": 3
+    "numbers_checked": 5
    },
    "raw_first_answer_ok": true,
    "raw_first_unmatched": [],
    "raw_first_ids_unknown": [],
-   "wall_s": 3.89,
+   "wall_s": 3.811,
    "llm_calls": [
     {
-     "wall_s": 1.398,
-     "total_s": 1.39,
+     "wall_s": 1.305,
+     "total_s": 1.291,
      "eval_count": 70
     },
     {
-     "wall_s": 2.12,
-     "total_s": 2.118,
-     "eval_count": 116
+     "wall_s": 2.339,
+     "total_s": 2.337,
+     "eval_count": 143
     }
    ]
   },
@@ -569,7 +629,7 @@
    "question": "شو أحسن قياس نعمله هسا بالكرك عشان نقلل الشك؟",
    "expected_tool": "propose_next_measurement",
    "mode": "answer",
-   "answer": "أفضل قياسات لتقليل الشك في الكرك هي:\n\n1. **قياس التدفق (Flow Meter)** على الهدف KRK-T-007\n   - يعطي معلومات إضافية متوقعة: 0.71 بت\n   - التكلفة: ساعة واحدة\n   - هذا هو الأفضل لأنه يعطي أكبر كمية من المعلومات مع أقل تكلفة\n\n2. **سجل الضغط (Pressure Logger)** على الهدف KRK-L-003\n   - يعطي معلومات إضافية متوقعة: 0.44 بت\n   - التكلفة: 1.5 ساعة\n\n3. **زيارة ميدانية (Field Visit)** على الهدف KRK-F-012\n   - يعطي معلومات إضافية متوقعة: 0.38 بت\n   - التكلفة: 3 ساعات\n\nالقياس الأول (قياس التدفق) هو الأفضل لأنه يعطيك أكبر كمية من المعلومات مع أقل تكلفة زمنية.",
+   "answer": "أفضل قياسات لتقليل الشك في الكرك هي:\n\n1. **قياس التدفق (Flow Meter)** على الهدف KRK-T-007\n   - يعطي أعلى معلومات جديدة (0.71 بت)\n   - التكلفة: ساعة واحدة فقط [EV-SIM-201]\n\n2. **سجل الضغط (Pressure Logger)** على الهدف KRK-L-003\n   - يعطي معلومات جيدة (0.44 بت)\n   - التكلفة: 1.5 ساعة [EV-SIM-202]\n\n3. **زيارة ميدانية (Field Visit)** على الهدف KRK-F-012\n   - يعطي معلومات أقل (0.38 بت)\n   - التكلفة: 3 ساعات [EV-SIM-203]\n\nالقياس الأول (قياس التدفق) هو الأفضل لأنه يعطيك أكبر كمية من المعلومات في وقت قصير، مما يقلل الشك بشكل أسرع.",
    "tool_calls": [
     {
      "name": "propose_next_measurement",
@@ -677,17 +737,17 @@
    "raw_first_answer_ok": true,
    "raw_first_unmatched": [],
    "raw_first_ids_unknown": [],
-   "wall_s": 4.731,
+   "wall_s": 4.397,
    "llm_calls": [
     {
-     "wall_s": 0.965,
-     "total_s": 0.962,
+     "wall_s": 0.898,
+     "total_s": 0.877,
      "eval_count": 43
     },
     {
-     "wall_s": 3.42,
-     "total_s": 3.418,
-     "eval_count": 195
+     "wall_s": 3.331,
+     "total_s": 3.329,
+     "eval_count": 209
     }
    ]
   },
@@ -707,9 +767,9 @@
       "case_id": "KRK-T-007",
       "task": "inspect_connection",
       "priority": "high",
-      "text_ar": "فحص التوصيلة للكشف عن أي تسريب أو خلل في الربط.",
-      "text_en": "Inspect the connection to detect any leaks or malfunctions in the link.",
-      "crew_ar": "فريق الفحص: تم فحص التوصيلة باستخدام أدوات القياس الدقيقة."
+      "text_ar": "فحص التوصيلة للكشف عن أي تسريب أو خلل في التركيب.",
+      "text_en": "Inspect the connection to detect any leaks or installation faults.",
+      "crew_ar": "فريق الفحص: مهندس ومراقب."
      },
      "result": {
       "label": "Simulated",
@@ -742,9 +802,9 @@
       "case_id": "KRK-T-007",
       "task": "inspect_connection",
       "priority": "high",
-      "text_ar": "فحص التوصيلة للكشف عن أي تسريب أو خلل في الربط.",
-      "text_en": "Inspect the connection to detect any leaks or malfunctions in the link.",
-      "crew_ar": "فريق الفحص: تم فحص التوصيلة باستخدام أدوات القياس الدقيقة."
+      "text_ar": "فحص التوصيلة للكشف عن أي تسريب أو خلل في التركيب.",
+      "text_en": "Inspect the connection to detect any leaks or installation faults.",
+      "crew_ar": "فريق الفحص: مهندس ومراقب."
      },
      "role": "engineer",
      "allowed": true
@@ -768,16 +828,16 @@
    "raw_first_answer_ok": true,
    "raw_first_unmatched": [],
    "raw_first_ids_unknown": [],
-   "wall_s": 3.91,
+   "wall_s": 3.285,
    "llm_calls": [
     {
-     "wall_s": 2.587,
-     "total_s": 2.567,
-     "eval_count": 140
+     "wall_s": 2.267,
+     "total_s": 2.248,
+     "eval_count": 133
     },
     {
-     "wall_s": 0.957,
-     "total_s": 0.955,
+     "wall_s": 0.845,
+     "total_s": 0.843,
      "eval_count": 47
     }
    ]
@@ -790,24 +850,49 @@
    "question": "اعمل مسودة أمر عمل لفحص KRK-L-003 بأولوية متوسطة",
    "expected_tool": "create_work_order_draft",
    "mode": "answer",
-   "answer": "عذراً، لا يمكنني إنشاء أمر عمل مسودة لأن هذا يتطلب إذنًا من مهندس آخر في الواجهة. يرجى طلب الموافقة من مهندس آخر قبل إنشاء الأمر.",
+   "answer": "أعتذر، لا يمكنني إنشاء أمر عمل نهجي لأن النظام يتطلب موافقة مهندس آخر في الواجهة. سأقوم فقط بتوثيق البيانات الحالية:\n\n- **احتمالية وجود مشكلة**: 48% (30–66%) [EV-SIM-102]\n- **حجم الخسارة المتوقع**: 95 متر مكعب يومياً (30–180) [EV-SIM-102]\n\nيمكنك مراجعة المسودة في الواجهة للحصول على الموافقة النهائية.",
    "tool_calls": [
+    {
+     "name": "query_posterior",
+     "args": {
+      "case_id": "KRK-L-003"
+     },
+     "result": {
+      "label": "Simulated",
+      "case_id": "KRK-L-003",
+      "p": {
+       "mean": 0.48,
+       "lo": 0.3,
+       "hi": 0.66
+      },
+      "volume_m3_day": {
+       "mean": 95,
+       "lo": 30,
+       "hi": 180
+      },
+      "evidence_ids": [
+       "EV-SIM-102"
+      ]
+     }
+    },
     {
      "name": "create_work_order_draft",
      "args": {
       "case_id": "KRK-L-003",
       "task": "inspect_connection",
       "priority": "medium",
-      "text_ar": "فحص اتصال خط الأنابيب في موقع KRK-L-003",
-      "text_en": "Inspect pipeline connection at site KRK-L-003",
-      "crew_ar": "فريق الفحوصات"
+      "text_ar": "فحص اتصال خط KRK-L-003. بناءً على البيانات الأولية، هناك احتمال متوسط بوجود مشكلة في الاتصال.",
+      "text_en": "Inspect connection for case KRK-L-003. Based on initial data, there is a moderate probability of a connection issue.",
+      "crew_ar": "فحص اتصال خط KRK-L-003. احتمال وجود مشكلة في الاتصال متوسط."
      },
      "result": {
       "error": "not_permitted"
      }
     }
    ],
-   "evidence_ids": [],
+   "evidence_ids": [
+    "EV-SIM-102"
+   ],
    "checks": {
     "prefilter": null,
     "flags": [],
@@ -825,14 +910,22 @@
    },
    "services_log": [
     {
+     "name": "query_posterior",
+     "args": {
+      "case_id": "KRK-L-003"
+     },
+     "role": "inspector",
+     "allowed": true
+    },
+    {
      "name": "create_work_order_draft",
      "args": {
       "case_id": "KRK-L-003",
       "task": "inspect_connection",
       "priority": "medium",
-      "text_ar": "فحص اتصال خط الأنابيب في موقع KRK-L-003",
-      "text_en": "Inspect pipeline connection at site KRK-L-003",
-      "crew_ar": "فريق الفحوصات"
+      "text_ar": "فحص اتصال خط KRK-L-003. بناءً على البيانات الأولية، هناك احتمال متوسط بوجود مشكلة في الاتصال.",
+      "text_en": "Inspect connection for case KRK-L-003. Based on initial data, there is a moderate probability of a connection issue.",
+      "crew_ar": "فحص اتصال خط KRK-L-003. احتمال وجود مشكلة في الاتصال متوسط."
      },
      "role": "inspector",
      "allowed": false
@@ -851,23 +944,53 @@
     "unmatched": [],
     "ids_unknown": [],
     "banned": [],
-    "matched": [],
-    "numbers_checked": 0
+    "matched": [
+     {
+      "text": "48%",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
+      "text": "30",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
+      "text": "66%",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
+      "text": "95",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
+      "text": "30",
+      "evidence_id": "EV-SIM-102"
+     },
+     {
+      "text": "180",
+      "evidence_id": "EV-SIM-102"
+     }
+    ],
+    "numbers_checked": 6
    },
    "raw_first_answer_ok": true,
    "raw_first_unmatched": [],
    "raw_first_ids_unknown": [],
-   "wall_s": 3.484,
+   "wall_s": 5.381,
    "llm_calls": [
     {
-     "wall_s": 2.34,
-     "total_s": 2.338,
-     "eval_count": 127
+     "wall_s": 0.752,
+     "total_s": 0.731,
+     "eval_count": 34
     },
     {
-     "wall_s": 0.787,
-     "total_s": 0.785,
-     "eval_count": 38
+     "wall_s": 2.615,
+     "total_s": 2.613,
+     "eval_count": 166
+    },
+    {
+     "wall_s": 1.849,
+     "total_s": 1.848,
+     "eval_count": 113
     }
    ]
   },
@@ -879,14 +1002,13 @@
    "question": "Log result for KRK-F-012: the crew visited and found nothing.",
    "expected_tool": "ingest_field_result",
    "mode": "answer",
-   "answer": "تم تسجيل نتيجة الزيارة الميدانية للحالة KRK-F-012، حيث لم يجد الفريق أي شذوذ.\n\nبناءً على النتيجة:\n- قبل الزيارة: كان احتمال وجود تسريب 0.35 [FR-SIM-0001]\n- بعد الزيارة: انخفض الاحتمال إلى 0.08 [FR-SIM-0001]\n- مرتبة الحالة قبل الزيارة: رقم 3 [FR-SIM-0001]\n- مرتبة الحالة بعد الزيارة: رقم 5 [FR-SIM-0001]\n\nانخفاض الاحتمال الكبير يعكس أن عدم وجود شذوذ يقلل بشكل كبير من احتمال وجود تسريب في هذا الموقع.",
+   "answer": "تم تسجيل نتيجة الزيارة الميدانية لـ KRK-F-012: لم يتم العثور على أي شذوذ.\n\nبناءً على النتيجة، تم تحديث الاحتمالات التالية:\n- قبل الزيارة: 0.35 [FR-SIM-0001]\n- بعد الزيارة: 0.08 [FR-SIM-0001]",
    "tool_calls": [
     {
      "name": "ingest_field_result",
      "args": {
       "case_id": "KRK-F-012",
-      "outcome": "no_anomaly_found",
-      "note": "The crew visited and found nothing."
+      "outcome": "no_anomaly_found"
      },
      "result": {
       "label": "Simulated",
@@ -902,8 +1024,19 @@
    "checks": {
     "prefilter": null,
     "flags": [],
-    "rewrites": 1,
+    "rewrites": 2,
     "numcheck": [
+     {
+      "ok": false,
+      "unmatched": [
+       "47",
+       "98%",
+       "12",
+       "25%"
+      ],
+      "ids_unknown": [],
+      "banned": []
+     },
      {
       "ok": false,
       "unmatched": [],
@@ -928,7 +1061,7 @@
      "args": {
       "case_id": "KRK-F-012",
       "outcome": "no_anomaly_found",
-      "note": "The crew visited and found nothing."
+      "note": null
      },
      "role": "inspector",
      "allowed": true
@@ -953,39 +1086,39 @@
      {
       "text": "0.08",
       "evidence_id": null
-     },
-     {
-      "text": "3",
-      "evidence_id": null
-     },
-     {
-      "text": "5",
-      "evidence_id": null
      }
     ],
-    "numbers_checked": 4
+    "numbers_checked": 2
    },
    "raw_first_answer_ok": false,
-   "raw_first_unmatched": [],
-   "raw_first_ids_unknown": [
-    "EV-SIM-0001"
+   "raw_first_unmatched": [
+    "47",
+    "98%",
+    "12",
+    "25%"
    ],
-   "wall_s": 7.718,
+   "raw_first_ids_unknown": [],
+   "wall_s": 5.946,
    "llm_calls": [
     {
-     "wall_s": 1.365,
-     "total_s": 1.362,
-     "eval_count": 69
+     "wall_s": 1.025,
+     "total_s": 0.999,
+     "eval_count": 51
     },
     {
-     "wall_s": 2.747,
-     "total_s": 2.745,
-     "eval_count": 151
+     "wall_s": 1.427,
+     "total_s": 1.426,
+     "eval_count": 87
     },
     {
-     "wall_s": 3.238,
-     "total_s": 3.235,
-     "eval_count": 154
+     "wall_s": 2.025,
+     "total_s": 2.022,
+     "eval_count": 76
+    },
+    {
+     "wall_s": 1.297,
+     "total_s": 1.296,
+     "eval_count": 79
     }
    ]
   },
@@ -1027,7 +1160,7 @@
    "raw_first_answer_ok": null,
    "raw_first_unmatched": [],
    "raw_first_ids_unknown": [],
-   "wall_s": 0.002,
+   "wall_s": 0.0,
    "llm_calls": []
   },
   {
@@ -1160,7 +1293,6 @@
      {
       "ok": false,
       "unmatched": [
-       "900",
        "900"
       ],
       "ids_unknown": [],
@@ -1238,31 +1370,30 @@
    },
    "raw_first_answer_ok": false,
    "raw_first_unmatched": [
-    "900",
     "900"
    ],
    "raw_first_ids_unknown": [],
-   "wall_s": 7.128,
+   "wall_s": 7.347,
    "llm_calls": [
     {
-     "wall_s": 1.007,
-     "total_s": 0.975,
+     "wall_s": 0.86,
+     "total_s": 0.858,
      "eval_count": 34
     },
     {
-     "wall_s": 2.052,
-     "total_s": 2.051,
-     "eval_count": 115
+     "wall_s": 1.981,
+     "total_s": 1.979,
+     "eval_count": 122
     },
     {
-     "wall_s": 2.022,
-     "total_s": 2.02,
-     "eval_count": 92
+     "wall_s": 2.364,
+     "total_s": 2.363,
+     "eval_count": 122
     },
     {
-     "wall_s": 1.647,
-     "total_s": 1.646,
-     "eval_count": 92
+     "wall_s": 1.971,
+     "total_s": 1.97,
+     "eval_count": 122
     }
    ]
   }

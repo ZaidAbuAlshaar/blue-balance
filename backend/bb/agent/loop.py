@@ -16,7 +16,7 @@ import httpx
 
 from bb import config
 from bb.agent import numcheck, refusal
-from bb.agent.prompts import AGENT_SYSTEM_V2, TOOLS, TOOL_NAMES, WRITE_TOOLS
+from bb.agent.prompts import AGENT_SYSTEM_V2, AGENT_SYSTEM_V3, TOOLS, TOOL_NAMES, WRITE_TOOLS
 
 MAX_TOOL_CALLS = 4
 BUDGET_S = 25.0
@@ -206,7 +206,7 @@ def run_agent(question: str, user: dict, services, history: list | None = None, 
         checks["prefilter"] = "APPROVAL"
         return _result(refusal.refusal_text("APPROVAL", question), "refusal", tool_calls, checks, timing, t0)
 
-    messages = [{"role": "system", "content": AGENT_SYSTEM_V2}]
+    messages = [{"role": "system", "content": AGENT_SYSTEM_V3}]
     for turn in history or []:  # only plain user/assistant text survives from history
         if isinstance(turn, dict) and turn.get("role") in ("user", "assistant") and isinstance(turn.get("content"), str):
             messages.append({"role": turn["role"], "content": turn["content"][:2000]})

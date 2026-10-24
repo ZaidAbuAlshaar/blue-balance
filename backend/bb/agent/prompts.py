@@ -68,3 +68,9 @@ TOOLS = [{'type': 'function',
 
 TOOL_NAMES = tuple(t['function']['name'] for t in TOOLS)
 WRITE_TOOLS = ('create_work_order_draft', 'ingest_field_result')
+
+# V3 = V2 + rule 11, added after the 16:35 live check showed numbers stated as facts without intervals.
+# Re-evaluated with eval/agent/run_agent_eval.py; V2 stays unchanged so the bake-off remains reproducible.
+AGENT_SYSTEM_V3 = AGENT_SYSTEM_V2 + """
+11. Probabilities and volumes are estimates for ranking inspections (label: Hypothesis), not confirmed losses.
+    Give the interval from the tool result with each one, e.g. "82% (47–98%)", and never say a site "loses" water as a fact."""
