@@ -1,0 +1,383 @@
+{
+ "generated_on": "2026-10-24",
+ "generator": "pipeline/process_fields.py",
+ "aoi_lonlat": [
+  35.86,
+  31.15,
+  36.14,
+  31.32
+ ],
+ "crs": "EPSG:32636",
+ "pixel_m": 10.0,
+ "scenes": [
+  {
+   "year": 2017,
+   "date": "2017-08-26",
+   "items": [
+    "S2A_MSIL2A_20170826T081001_R078_T37RBQ_20210201T110735",
+    "S2A_MSIL2A_20170826T081001_R078_T36RYV_20210201T110717"
+   ],
+   "processing_baseline": [
+    "02.12"
+   ],
+   "cloud_cover": [
+    0.025501,
+    0.042048
+   ],
+   "offset_applied_dn": 0.0,
+   "valid_fraction": 0.9997,
+   "green_fraction_aoi": 0.00217,
+   "ndvi_p50": 0.0644,
+   "ndvi_p99": 0.1116,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.1748,
+    0.0012
+   ],
+   "quality_flag": "ok"
+  },
+  {
+   "year": 2018,
+   "date": "2018-08-31",
+   "items": [
+    "S2A_MSIL2A_20180831T080601_R078_T37RBQ_20201103T174838",
+    "S2A_MSIL2A_20180831T080601_R078_T36RYV_20201103T174811"
+   ],
+   "processing_baseline": [
+    "02.12"
+   ],
+   "cloud_cover": [
+    0.022335,
+    0.034777
+   ],
+   "offset_applied_dn": 0.0,
+   "valid_fraction": 0.9997,
+   "green_fraction_aoi": 0.00203,
+   "ndvi_p50": 0.0609,
+   "ndvi_p99": 0.1097,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.1854,
+    0.001
+   ],
+   "quality_flag": "ok"
+  },
+  {
+   "year": 2019,
+   "date": "2019-09-20",
+   "items": [
+    "S2B_MSIL2A_20190920T080609_R078_T37RBQ_20201004T152450",
+    "S2B_MSIL2A_20190920T080609_R078_T36RYV_20201004T152441"
+   ],
+   "processing_baseline": [
+    "02.12"
+   ],
+   "cloud_cover": [
+    0.015316,
+    0.026912
+   ],
+   "offset_applied_dn": 0.0,
+   "valid_fraction": 0.9999,
+   "green_fraction_aoi": 0.00171,
+   "ndvi_p50": 0.0674,
+   "ndvi_p99": 0.1127,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.1599,
+    0.0008
+   ],
+   "quality_flag": "ok"
+  },
+  {
+   "year": 2020,
+   "date": "2020-09-29",
+   "items": [
+    "S2A_MSIL2A_20200929T080731_R078_T37RBQ_20201001T153859",
+    "S2A_MSIL2A_20200929T080731_R078_T36RYV_20201001T154801"
+   ],
+   "processing_baseline": [
+    "02.12"
+   ],
+   "cloud_cover": [
+    0.024579,
+    0.043952
+   ],
+   "offset_applied_dn": 0.0,
+   "valid_fraction": 0.9997,
+   "green_fraction_aoi": 0.00183,
+   "ndvi_p50": 0.0755,
+   "ndvi_p99": 0.1272,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.1658,
+    0.0009
+   ],
+   "quality_flag": "ok"
+  },
+  {
+   "year": 2021,
+   "date": "2021-09-27",
+   "items": [
+    "S2A_MSIL2A_20210927T081721_R121_T37RBQ_20211209T045818",
+    "S2A_MSIL2A_20210927T081721_R121_T37RBQ_20210929T052032",
+    "S2A_MSIL2A_20210927T081721_R121_T37RBQ_20210927T191130",
+    "S2A_MSIL2A_20210927T081721_R121_T36RYV_20211209T054315"
+   ],
+   "processing_baseline": [
+    "03.00"
+   ],
+   "cloud_cover": [
+    0.143182,
+    0.040068,
+    0.143182,
+    0.384325
+   ],
+   "offset_applied_dn": 0.0,
+   "valid_fraction": 0.9999,
+   "green_fraction_aoi": 0.01576,
+   "ndvi_p50": 0.0725,
+   "ndvi_p99": 0.3737,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.0063,
+    0.0158
+   ],
+   "quality_flag": "radiometry_anomaly: AOI green fraction far above other years and greener outside WorldCover cropland than inside (chip shows a corrupt, streaked image); year EXCLUDED from all field statistics (counts as not green)"
+  },
+  {
+   "year": 2022,
+   "date": "2022-08-25",
+   "items": [
+    "S2B_MSIL2A_20220825T080609_R078_T37RBQ_20240720T071409",
+    "S2B_MSIL2A_20220825T080609_R078_T37RBQ_20220826T034000",
+    "S2B_MSIL2A_20220825T080609_R078_T36RYV_20240720T071409",
+    "S2B_MSIL2A_20220825T080609_R078_T36RYV_20220826T033833"
+   ],
+   "processing_baseline": [
+    "04.00",
+    "05.10"
+   ],
+   "cloud_cover": [
+    7.4e-05,
+    7.7e-05,
+    0.000222,
+    0.000222
+   ],
+   "offset_applied_dn": 1000.0,
+   "valid_fraction": 1.0,
+   "green_fraction_aoi": 0.00148,
+   "ndvi_p50": 0.0677,
+   "ndvi_p99": 0.1032,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.1242,
+    0.0008
+   ],
+   "quality_flag": "ok"
+  },
+  {
+   "year": 2023,
+   "date": "2023-08-20",
+   "items": [
+    "S2B_MSIL2A_20230820T080609_R078_T37RBQ_20241022T112037",
+    "S2B_MSIL2A_20230820T080609_R078_T37RBQ_20230820T151442",
+    "S2B_MSIL2A_20230820T080609_R078_T36RYV_20241022T112037",
+    "S2B_MSIL2A_20230820T080609_R078_T36RYV_20230820T142046"
+   ],
+   "processing_baseline": [
+    "05.09",
+    "05.10"
+   ],
+   "cloud_cover": [
+    4.7e-05,
+    4.7e-05,
+    0.00052,
+    0.001135
+   ],
+   "offset_applied_dn": 1000.0,
+   "valid_fraction": 1.0,
+   "green_fraction_aoi": 0.00238,
+   "ndvi_p50": 0.0664,
+   "ndvi_p99": 0.123,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.246,
+    0.001
+   ],
+   "quality_flag": "ok"
+  },
+  {
+   "year": 2024,
+   "date": "2024-09-01",
+   "items": [
+    "S2A_MSIL2A_20240901T081601_R121_T37RBQ_20240901T140001",
+    "S2A_MSIL2A_20240901T081601_R121_T36RYV_20240901T140001"
+   ],
+   "processing_baseline": [
+    "05.11"
+   ],
+   "cloud_cover": [
+    0.0,
+    0.0
+   ],
+   "offset_applied_dn": 1000.0,
+   "valid_fraction": 0.0,
+   "green_fraction_aoi": 0.0,
+   "ndvi_p50": null,
+   "ndvi_p99": null,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.0,
+    0.0
+   ],
+   "quality_flag": "no_valid_pixels: raster is all NaN; year excluded (counts as not green)"
+  },
+  {
+   "year": 2025,
+   "date": "2025-07-30",
+   "items": [
+    "S2A_MSIL2A_20250730T082021_R121_T37RBQ_20250730T122714",
+    "S2A_MSIL2A_20250730T082021_R121_T36RYV_20250730T122714",
+    "S2B_MSIL2A_20250730T080609_R078_T37RBQ_20250730T100822",
+    "S2B_MSIL2A_20250730T080609_R078_T37RBQ_20250730T091117",
+    "S2B_MSIL2A_20250730T080609_R078_T36RYV_20250730T100822",
+    "S2B_MSIL2A_20250730T080609_R078_T36RYV_20250730T091117"
+   ],
+   "processing_baseline": [
+    "05.11"
+   ],
+   "cloud_cover": [
+    0.001081,
+    0.593853,
+    0.004373,
+    0.005268,
+    0.007893,
+    0.000557
+   ],
+   "offset_applied_dn": 1000.0,
+   "valid_fraction": 1.0,
+   "green_fraction_aoi": 0.00148,
+   "ndvi_p50": 0.0689,
+   "ndvi_p99": 0.1079,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.1609,
+    0.0006
+   ],
+   "quality_flag": "ok"
+  },
+  {
+   "year": 2026,
+   "date": "2026-08-24",
+   "items": [
+    "S2A_MSIL2A_20260824T082021_R121_T37RBQ_20260824T134110",
+    "S2A_MSIL2A_20260824T082021_R121_T36RYV_20260824T134110",
+    "S2B_MSIL2A_20260824T080559_R078_T37RBQ_20260824T103646",
+    "S2B_MSIL2A_20260824T080559_R078_T36RYV_20260824T103646"
+   ],
+   "processing_baseline": [
+    "05.12"
+   ],
+   "cloud_cover": [
+    0.002404,
+    0.182056,
+    0.000464,
+    0.001768
+   ],
+   "offset_applied_dn": 1000.0,
+   "valid_fraction": 1.0,
+   "green_fraction_aoi": 0.00202,
+   "ndvi_p50": 0.08,
+   "ndvi_p99": 0.1392,
+   "green_fraction_in_worldcover_cropland_vs_other": [
+    0.1721,
+    0.0011
+   ],
+   "quality_flag": "ok"
+  }
+ ],
+ "offset_rule": "reflectance = (DN - 1000)/10000 if processing_baseline >= 04.00 (ESA BOA_ADD_OFFSET), else DN/10000",
+ "scl_invalid_classes": [
+  0,
+  1,
+  3,
+  8,
+  9,
+  10
+ ],
+ "thresholds": {
+  "green_ndvi_gt": 0.3,
+  "green_ndvi_justification": "desert background NDVI p99 is 0.10-0.14 in every valid scene (scenes[].ndvi_p99), so 0.30 sits well above bare soil",
+  "new_green_rule": "green in all of [2025, 2026] AND valid in >=1 of [2017, 2018] AND not green in any valid one of [2017, 2018]",
+  "morphological_opening": "scipy.ndimage.binary_opening, 3x3 cross, 1 iteration",
+  "min_component_pixels": 20,
+  "min_component_m2": 2000.0,
+  "patch_green_fraction": 0.5,
+  "first_green_year": "first year the patch has >= 50% of its valid pixels green",
+  "persistence_years": "green years (same 50% rule) among [2023, 2024, 2025, 2026]"
+ },
+ "features": {
+  "isolation_m": "min distance (scipy distance_transform_edt, 10 m sampling) from the patch to the nearest ESA WorldCover 2021 cropland (class 40) pixel outside all candidate patches",
+  "dist_to_route_m": "shapely distance polygon <-> route LineString in EPSG:32636",
+  "rain_dry_season_mm": "ERA5 precipitation_sum total, Jun-Sep 2026, at 31.25N 36.0E",
+  "et0_dry_season_mm": "ERA5 et0_fao_evapotranspiration MEAN DAILY (mm/day), Jun-Sep 2026 (122 days)",
+  "ndvi_increase": "patch mean NDVI 2026 minus patch mean NDVI 2017"
+ },
+ "normalisation": {
+  "f_proximity": "1 - min(dist_to_route_m, 5000) / 5000",
+  "f_isolation": "min(isolation_m, 2000) / 2000",
+  "f_ndvi_increase": "clip(ndvi_increase / 0.4, 0, 1)",
+  "f_persistence": "persistence_years / 4",
+  "f_small_size": "1 - log10(clip(area, 2000, 100000) / 2000) / log10(100000 / 2000)",
+  "f_small_size_justification": "ASSUMED team prior: small plots (min patch 0.2 ha) are easier to supply from an informal tap and less likely to be a registered farm; area spans orders of magnitude, hence log scale; >= 10 ha scores 0",
+  "baseline_score": "0.30*f_proximity + 0.25*f_isolation + 0.20*f_ndvi_increase + 0.15*f_persistence + 0.10*f_small_size",
+  "weights_source": "team expert prior (ASSUMED, not calibrated)"
+ },
+ "labels": {
+  "measured": "Observed",
+  "score": "Hypothesis",
+  "route": "Simulated"
+ },
+ "counts": {
+  "new_green_pixels_raw": 1741,
+  "new_green_pixels_after_opening": 749,
+  "components_after_opening": 38,
+  "candidates_ge_min_size": 14,
+  "fields_written": 14,
+  "chips_written": 100
+ },
+ "chips": {
+  "fields": 10,
+  "box_m": 1280.0,
+  "size_px": 256,
+  "bands": "B04/B03/B02",
+  "stretch": "global per-band percentiles (0.1, 99.9) of offset-corrected reflectance, pooled over all valid years",
+  "stretch_values": {
+   "B04": [
+    0.16339989437162877,
+    0.6772004193664253
+   ],
+   "B03": [
+    0.13699999451637268,
+    0.5616000294685364
+   ],
+   "B02": [
+    0.09160000085830688,
+    0.4611999988555908
+   ]
+  },
+  "no_data_or_excluded_years": [
+   2021,
+   2024
+  ]
+ },
+ "route": {
+  "method": "osm_overpass",
+  "source": "OpenStreetMap contributors, ODbL (Overpass API, Highway 15 ways)",
+  "label": "Simulated"
+ },
+ "licences": {
+  "sentinel-2": "Contains modified Copernicus Sentinel data (2017-2026), free and open with attribution",
+  "esa-worldcover": "ESA WorldCover 10 m 2021 v200, CC-BY-4.0",
+  "era5-open-meteo": "ERA5 reanalysis via Open-Meteo archive API, CC BY 4.0",
+  "route": "OpenStreetMap contributors, ODbL (Overpass API, Highway 15 ways)"
+ },
+ "caveats": [
+  "Candidates are inspection candidates, never violations.",
+  "Route is approximate (Highway 15), not surveyed pipe geometry.",
+  "Only 14 patches pass the new-green rule (fewer than TOP_N=25); no patches were added to reach 25.",
+  "14 of 14 patches touch WorldCover 2021 cropland (isolation_m = 10 m, one pixel): they sit inside or at the edge of established farm blocks, so f_isolation is near 0 for them. The chips show many are plots inside existing farms that were fallow in 2017-2018 (crop rotation is a likely alternative explanation), not new desert farms.",
+  "Years excluded as unusable: [2021, 2024] (see scenes[].quality_flag); field series carry null for them and persistence_years counts them as not green."
+ ]
+}
