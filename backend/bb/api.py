@@ -282,7 +282,38 @@ def audit_log(user=Depends(current_user)):
     return _result(services.audit_log(user))
 
 
-# ------------------------------------------------------------------ static
+
+
+# ------------------------------------------------------------ demo views
+from bb.config import SYNTHETIC  # noqa: E402
+from bb.services import fusion_breakdown, impact  # noqa: E402
+
+
+@app.get("/api/cases/{case_id}/fusion")
+def case_fusion(case_id: str, user=Depends(current_user)):
+    return _result(fusion_breakdown(services, case_id, user))
+
+
+@app.get("/api/impact")
+def impact_view(user=Depends(current_user)):
+    return _result(impact(services, user))
+
+
+@app.get("/api/fields/{field_id}/chips")
+def field_chips(field_id: str, user=Depends(current_user)):
+    if user["role"] not in ("inspector", "engineer"):
+        return JSONResponse({"error": "not_permitted"}, status_code=403)
+    years = [{"year": int(p.stem.rsplit("_", 1)[1]), "url": f"/chips/{p.name}"}
+             for p in sorted((PROCESSED / "chips").glob(f"{field_id}_*.png"))]
+    return {"field_id": field_id, "label": "Observed", "years": years}
+
+
+@app.get("/api/demo/reports")
+def demo_reports(user=Depends(current_user)):
+    return json.loads((SYNTHETIC / "crew_reports_demo.json").read_text(encoding="utf-8"))
+
+
+# ------------------------------------------------------------------ static (must stay last: "/" catches everything)
 if (PROCESSED / "chips").exists():
     app.mount("/chips", StaticFiles(directory=PROCESSED / "chips"), name="chips")
 if (REPO / "web" / "dist").exists():

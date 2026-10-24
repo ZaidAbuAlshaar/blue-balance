@@ -288,3 +288,53 @@ def _transform_geometry(geometry, transform):
             return list(transform(coords[0], coords[1]))
         return [walk(c) for c in coords]
     return {"type": geometry["type"], "coordinates": walk(geometry["coordinates"])}
+
+
+# ------------------------------------------------------------ demo views
+def _bounded_product(a, b):
+    """Bounding interval of a product of two non-negative intervals."""
+    return {"mean": a["mean"] * b["mean"], "lo": a["lo"] * b["lo"], "hi": a["hi"] * b["hi"]}
+
+
+def fusion_breakdown(svc, case_id, user):
+    """Initial fusion (before any field result): posterior from each signal alone and from both."""
+    from bb.engine import fusion
+    from bb.seed import ASSUMPTIONS as SEED_ASSUMPTIONS
+    if user.get("role") not in READ_ROLES:
+        return svc._deny(user, "fusion_breakdown", case_id)
+    case = svc._case(case_id)
+    if case is None:
+        return {"error": "unknown_case_id"}
+    signals = json.loads(case["signals"])
+    prior = SEED_ASSUMPTIONS["prior_transmission" if case["layer"] == "transmission" else "prior_source"]["value"]
+    line = [s["lr"] for s in signals if s["layer"] == "transmission"]
+    field = [s["lr"] for s in signals if s["layer"] == "source"]
+    out = {"case_id": case_id, "layer": case["layer"], "prior": prior, "signals": signals, "label": "Hypothesis",
+           "note": "Initial fusion before any field result; LRs are uncalibrated until real outcomes exist."}
+    rnd = lambda iv: {k: round(float(iv[k]), 2) for k in ("mean", "lo", "hi")}
+    out["posterior_line_only"] = rnd(fusion.posterior(prior, line)) if line else None
+    out["posterior_field_only"] = rnd(fusion.posterior(prior, field)) if field else None
+    out["posterior_fused"] = rnd(fusion.posterior(prior, line + field)) if line and field else None
+    return out
+
+
+def impact(svc, user, top_n=5):
+    """Expected (not verified) m3/day stoppable at the top-N cases, and the pumping energy it represents."""
+    from bb.engine import energy
+    if user.get("role") not in READ_ROLES:
+        return svc._deny(user, "impact")
+    ranked = sorted(svc._ranked().values(), key=lambda x: x[0])[:top_n]
+    total = {"mean": 0.0, "lo": 0.0, "hi": 0.0}
+    for _, row in ranked:
+        exp = priority.expected_m3_day({k: row[f"p_{k}"] for k in ("mean", "lo", "hi")},
+                                       {k: row[f"vol_{k}"] for k in ("mean", "lo", "hi")})
+        for k in total:
+            total[k] += float(exp[k])
+    kwh_m3 = energy.kwh_per_m3(energy.ASSUMPTIONS["lift_m"]["value"], energy.ASSUMPTIONS["pump_eff"]["value"])
+    kwh_day = _bounded_product(total, kwh_m3)
+    co2 = energy.co2_kg(kwh_day)
+    rnd = lambda iv, nd=1: {k: round(float(iv[k]), nd) for k in ("mean", "lo", "hi")}
+    return {"label": "Hypothesis", "top_n": len(ranked),
+            "expected_m3_day": rnd(total), "kwh_per_m3": rnd(kwh_m3, 3), "kwh_day": rnd(kwh_day), "co2_kg_day": rnd(co2),
+            "assumptions": {k: energy.ASSUMPTIONS[k] for k in ("lift_m", "pump_eff", "grid_g_per_kwh")},
+            "note": "Expected loss at ranked candidates, not verified recoveries. No field-verified result exists."}
