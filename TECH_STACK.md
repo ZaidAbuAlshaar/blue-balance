@@ -12,6 +12,12 @@ Status: **stack + D1–D6 APPROVED by Zaid (2026-10-24). Downloads running. No a
 - [x] **D4 Model (changed in U2):** picks come from the measured bake-off in `MODELS.md`: agent `qwen3.5:4b`, extractor `gemma4:e4b-it-qat` (D7 pending). Waiting for Zaid's "موافق" on MODELS.md.
 - [x] **D5 Main line:** an "Approximate route" along the Desert Highway through Qatraneh. No pipe features are downloaded.
 - [x] **D6 Ollama:** pin v0.40.10 as is (a 14-day-old release may lack Gemma 4 support).
+- [x] **D7–D9 (MODELS.md, approved):** agent `qwen3.5:4b`, extractor `gemma4:e4b-it-qat`, round-2 prompt (now V3 = V2 + the "estimates, not confirmed losses" rule), Qwen3.5-9B skipped.
+- [x] **D10 Layer 1 story (approved 2026-10-24):** present it as it really is.
+  - All 14 Sentinel-2 candidates near the route are dry-season greenness **inside existing WorldCover cropland** (likely crop rotation).
+  - The system flags them, the isolation feature scores 0, and they stay low in the queue. That shows it does not over-flag.
+  - No wider search today.
+- [x] **D11 Extractor claim (approved 2026-10-24):** keep both the Gemma LLM extractor and the rules extractor. Say **"on par in our test"**: 90.9% vs 92.3% on the 30-report held-out set, which was not blinded. Never claim the LLM is better.
 
 **Legend**
 - ✅ = already installed on this laptop (checked read-only today).
