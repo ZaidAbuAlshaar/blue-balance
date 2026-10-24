@@ -63,12 +63,43 @@ def login(body: Login, response: Response):
         db.audit(con, body.user_id, "user", "login_failed", None, {})
         con.commit()
         raise HTTPException(401, "wrong user or password")
+    return _issue_session(response, row, "login")
+
+
+def _issue_session(response, row, action):
     token = jwt.encode({"sub": row["user_id"], "role": row["role"], "name": row["display_name"],
                         "exp": int(time.time()) + SESSION_S}, SECRET, algorithm="HS256")
     response.set_cookie(COOKIE, token, httponly=True, samesite="strict", max_age=SESSION_S)
-    db.audit(con, row["user_id"], "user", "login", None, {})
+    db.audit(con, row["user_id"], "user", action, None, {})
     con.commit()
     return {"user_id": row["user_id"], "role": row["role"], "display_name": row["display_name"]}
+
+
+# Demo role switch: pick a demo account from the top bar, no password. On by default for the
+# hackathon demo; set BB_DEMO_SWITCH=0 to require /api/login. Roles are still enforced server-side.
+DEMO_SWITCH = os.environ.get("BB_DEMO_SWITCH", "1") == "1"
+
+
+class Switch(BaseModel):
+    user_id: str
+
+
+@app.get("/api/demo/users")
+def demo_users():
+    if not DEMO_SWITCH:
+        raise HTTPException(404, "demo switch disabled")
+    rows = con.execute("SELECT user_id, display_name, role FROM users ORDER BY role, user_id").fetchall()
+    return {"label": "Simulated", "users": [dict(r) for r in rows]}
+
+
+@app.post("/api/demo/switch")
+def demo_switch(body: Switch, response: Response):
+    if not DEMO_SWITCH:
+        raise HTTPException(404, "demo switch disabled")
+    row = con.execute("SELECT * FROM users WHERE user_id = ?", (body.user_id,)).fetchone()
+    if row is None:
+        raise HTTPException(400, "unknown demo user")
+    return _issue_session(response, row, "demo_switch")
 
 
 @app.post("/api/logout")

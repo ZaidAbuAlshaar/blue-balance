@@ -83,3 +83,15 @@ def test_health_and_transparency(client):
     assert all(health["processed"].values())
     labels = client.get("/api/transparency").json()["evidence_by_label"]
     assert labels.get("Field-verified", 0) == 0
+
+
+def test_demo_switch_without_password_keeps_roles(client):
+    client.cookies.clear()
+    users = client.get("/api/demo/users").json()["users"]
+    assert {u["user_id"] for u in users} >= {"eng_a", "eng_b", "insp_1", "admin_1"}
+    assert all("password" not in u and "password_hash" not in u for u in users)
+    assert client.post("/api/demo/switch", json={"user_id": "admin_1"}).status_code == 200
+    assert client.get("/api/map/cases").status_code == 403
+    assert client.post("/api/demo/switch", json={"user_id": "nobody"}).status_code == 400
+    assert client.post("/api/demo/switch", json={"user_id": "insp_1"}).json()["role"] == "inspector"
+    assert client.get("/api/queue").status_code == 200

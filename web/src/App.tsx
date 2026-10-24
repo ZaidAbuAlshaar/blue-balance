@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { api, ApiError, post } from './api';
+import { api, post } from './api';
 import { useStore, useT, type User } from './store';
 import { go, useRoute } from './route';
 import { Loading } from './ui';
@@ -28,50 +28,59 @@ const NAV: { group: [string, string]; items: { id: string; ar: string; en: strin
   { group: ['الثقة', 'Trust'], items: [{ id: 'transparency', ar: 'الشفافية', en: 'Transparency' }] },
 ];
 
-function Login() {
+const ROLEBAR_KEY = 'bb_rolebar_hidden';
+
+/** Top bar for picking a demo role. No password; the server still enforces every role rule. */
+function RoleBar() {
+  const user = useStore((s) => s.user);
   const setUser = useStore((s) => s.setUser);
-  const pending = useStore((s) => s.pendingUser);
-  const t = useT();
-  const [uid, setUid] = useState(pending ?? 'eng_a');
-  const [pw, setPw] = useState('');
-  const [err, setErr] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
   const qc = useQueryClient();
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    setBusy(true); setErr(null);
+  const t = useT();
+  const [hidden, setHidden] = useState(() => {
+    try { return localStorage.getItem(ROLEBAR_KEY) === '1'; } catch { return false; }
+  });
+  const [busy, setBusy] = useState<string | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  function toggle(h: boolean) {
+    setHidden(h);
+    try { localStorage.setItem(ROLEBAR_KEY, h ? '1' : '0'); } catch { /* ignore */ }
+  }
+  async function pick(id: string) {
+    if (id === user?.user_id) return;
+    setBusy(id); setErr(null);
     try {
-      const u = await post<User>('/api/login', { user_id: uid, password: pw });
+      const u = await post<User>('/api/demo/switch', { user_id: id });
       qc.clear();
       setUser(u);
     } catch (x) {
-      setErr((x as ApiError).status === 401 ? 'كلمة السر أو المستخدم غلط · wrong user or password' : String((x as Error).message));
-    } finally { setBusy(false); }
+      setErr(String((x as Error).message));
+    } finally { setBusy(null); }
+  }
+  const current = DEMO_USERS.find((u) => u.user_id === user?.user_id);
+  if (hidden) {
+    return (
+      <button className="rolebar-show" onClick={() => toggle(false)} aria-label={t('إظهار شريط الأدوار', 'Show role bar')}>
+        {t('الدور', 'Role')}: <b>{current ? t(current.ar, current.en) : '—'}</b> · {t('إظهار', 'Show')}
+      </button>
+    );
   }
   return (
-    <div className="login-page">
-      <form className="login" onSubmit={submit}>
-        <div className="brand-lg"><Mark /> <div><div className="brand-ar">ميزان الأزرق</div><div className="brand-en">Blue Balance</div></div></div>
-        <p className="login-tag">{t('اكتشف · تحقّق · تذكّر — وين يروح المفتش أول؟', 'Detect · Verify · Remember — where do inspectors go first?')}</p>
-        <fieldset>
-          <legend>{t('حساب تجريبي', 'Demo account')} <span className="muted">· Simulated</span></legend>
-          {DEMO_USERS.map((u) => (
-            <label key={u.user_id} className={`user-opt ${uid === u.user_id ? 'on' : ''}`}>
-              <input type="radio" name="uid" value={u.user_id} checked={uid === u.user_id} onChange={() => setUid(u.user_id)} />
-              <span><b>{u.ar}</b> · {u.en}</span>
-              <span className="muted mono" dir="ltr">{u.user_id}</span>
-              <span className="role">{ROLE[u.role]}</span>
-            </label>
-          ))}
-        </fieldset>
-        <label className="field">
-          <span>{t('كلمة السر', 'Password')}</span>
-          <input type="password" name="password" value={pw} onChange={(e) => setPw(e.target.value)} autoComplete="current-password" dir="ltr" autoFocus />
-        </label>
-        {err && <div className="error" role="alert">{err}</div>}
-        <button className="btn primary" type="submit" disabled={busy || !pw}>{busy ? '…' : t('دخول', 'Sign in')}</button>
-        <p className="muted small">{t('الحسابات للعرض المحلي فقط.', 'Accounts are for the local demo only.')}</p>
-      </form>
+    <div className="rolebar" role="toolbar" aria-label={t('اختيار الدور', 'Choose your role')}>
+      <span className="rb-label">{t('اختار دورك', 'Choose your role')} <span className="rb-note">· {t('عرض تجريبي', 'demo')}</span></span>
+      <div className="rb-opts">
+        {DEMO_USERS.map((u) => {
+          const on = user?.user_id === u.user_id;
+          return (
+            <button key={u.user_id} className={`rb-opt ${on ? 'on' : ''}`} aria-pressed={on} disabled={busy !== null}
+              onClick={() => pick(u.user_id)} data-user={u.user_id}>
+              <b>{t(u.ar, u.en)}</b>
+              <span>{ROLE[u.role]}</span>
+            </button>
+          );
+        })}
+      </div>
+      {err && <span className="rb-err" role="alert">{err}</span>}
+      <button className="btn ghost sm rb-hide" onClick={() => toggle(true)}>{t('إخفاء الشريط', 'Hide bar')}</button>
     </div>
   );
 }
@@ -87,16 +96,9 @@ function Mark() {
 }
 
 function Header() {
-  const { user, setUser, setPendingUser, lang, setLang } = useStore();
-  const qc = useQueryClient();
+  const { user, lang, setLang } = useStore();
   const t = useT();
   const health = useQuery({ queryKey: ['health'], queryFn: () => api('/api/health'), refetchInterval: 30_000 });
-  async function switchTo(id: string) {
-    await post('/api/logout').catch(() => null);
-    qc.clear();
-    setPendingUser(id && id !== '__logout' ? id : null);
-    setUser(null);
-  }
   const ol = health.data?.ollama;
   return (
     <header className="topbar">
@@ -112,11 +114,6 @@ function Header() {
           <div className="userbox">
             <div className="ub-name">{user.display_name}</div>
             <div className="ub-role">{ROLE[user.role] ?? user.role}</div>
-            <select aria-label="switch user" value="" onChange={(e) => switchTo(e.target.value)} className="ub-switch">
-              <option value="">{t('تبديل المستخدم…', 'Switch user…')}</option>
-              {DEMO_USERS.filter((u) => u.user_id !== user.user_id).map((u) => <option key={u.user_id} value={u.user_id}>{u.ar} · {u.en}</option>)}
-              <option value="__logout">{t('خروج', 'Log out')}</option>
-            </select>
           </div>
         )}
       </div>
@@ -157,10 +154,13 @@ export function App() {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   }, [lang]);
   useEffect(() => {
-    api<User>('/api/me').then(setUser).catch(() => setUser(null)).finally(() => setChecked(true));
+    api<User>('/api/me')
+      .then(setUser)
+      .catch(() => post<User>('/api/demo/switch', { user_id: 'eng_a' }).then(setUser).catch(() => setUser(null)))
+      .finally(() => setChecked(true));
   }, []);
   if (!checked) return <Loading />;
-  if (!user) return <Login />;
+  if (!user) return <div className="content"><div className="error" role="alert">{'ما قدرنا نبدأ الجلسة · Could not start a session. Is the server running?'}</div></div>;
   let screen;
   switch (route.name) {
     case 'case': screen = <CaseDetail id={route.param ?? 'KRK-T-002'} />; break;
@@ -175,6 +175,7 @@ export function App() {
     <div className="shell">
       <Sidebar current={route.name} />
       <div className="main">
+        <RoleBar />
         <Header />
         <main className="content" key={route.name + (route.param ?? '')}>{screen}</main>
       </div>

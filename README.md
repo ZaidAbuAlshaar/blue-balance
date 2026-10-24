@@ -81,7 +81,9 @@ Paths:
    cd web; pnpm install; pnpm build; cd ..
    powershell -ExecutionPolicy Bypass -File ops\start.ps1
    ```
-   `start.ps1` starts Ollama on 127.0.0.1, preloads both models, seeds the database if it is missing and serves the app at http://127.0.0.1:8000. Demo accounts are written to `data/synthetic/demo_users.json`, which is not committed.
+   `start.ps1` starts Ollama on 127.0.0.1, preloads both models, seeds the database if it is missing and serves the app at http://127.0.0.1:8000.
+
+   **Demo mode:** a role bar at the top switches between the demo accounts (Engineer A, Engineer B, Inspector, Admin) without a password, and you can hide it. The server still enforces every role rule and logs each switch. Set `BB_DEMO_SWITCH=0` to require passwords through `/api/login`; the passwords are written to `data/synthetic/demo_users.json`, which is not committed.
 
 **Tests:** run `cd backend; python -m pytest -m "not llm"`. That covers database rules, services, API, engine, data, agent and extractor. Run `python -m pytest` to include the live-LLM tests.
 

@@ -1,21 +1,18 @@
 import { test, expect, type Page } from '@playwright/test';
-import { readFileSync, mkdirSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { mkdirSync } from 'node:fs';
 
-// Demo passwords are read at test time from the synthetic demo-user file; they are never in the bundle.
-const users = JSON.parse(readFileSync(resolve(process.cwd(), '../data/synthetic/demo_users.json'), 'utf-8')).users as { user_id: string; password: string }[];
-const pw = (id: string) => users.find((u) => u.user_id === id)!.password;
-const OUT = process.env.BB_SCREENS ?? 'E:\\blue-balance-data\\screens';
+const OUT = process.env.BB_SCREENS ?? 'E:/blue-balance-data/screens';
 mkdirSync(OUT, { recursive: true });
 // Writes (field results, work orders, reports) change the live demo DB, so they only run when asked.
 const MUTATE = process.env.E2E_MUTATE === '1';
 
+// No login screen: the app starts as Engineer A, and the top role bar switches demo roles.
 async function login(page: Page, id: string) {
   await page.goto('/');
-  await page.locator(`input[name=uid][value=${id}]`).check();
-  await page.locator('input[name=password]').fill(pw(id));
-  await page.getByRole('button', { name: /دخول|Sign in/ }).click();
   await expect(page.locator('.sidebar')).toBeVisible();
+  const opt = page.locator(`.rb-opt[data-user=${id}]`);
+  if ((await opt.getAttribute('aria-pressed')) !== 'true') await opt.click();
+  await expect(opt).toHaveAttribute('aria-pressed', 'true');
 }
 
 async function shot(page: Page, name: string) {
@@ -24,10 +21,8 @@ async function shot(page: Page, name: string) {
 }
 
 test('screens', async ({ page }) => {
-  await page.goto('/');
-  await page.locator('input[name=uid][value=eng_a]').check();
-  await shot(page, '01_login');
   await login(page, 'eng_a');
+  await shot(page, '01_rolebar');
 
   await page.goto('/#/overview');
   await expect(page.locator('.qitem').first()).toBeVisible();

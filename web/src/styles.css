@@ -348,3 +348,29 @@ select:focus, input:focus, textarea:focus, .btn:focus-visible { outline: 2px sol
   .phone-screen { border-radius: 0; padding: 12px 16px; min-height: 0; }
   .impact-tiles, .outcomes { grid-template-columns: 1fr 1fr; }
 }
+
+/* Demo role bar: pick a role at the top, hide it or keep it */
+.rolebar {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 8px 24px;
+  background: var(--navy); color: #E9EFF8; border-bottom: 1px solid var(--navy-2);
+}
+.rb-label { font-size: 13px; font-weight: 600; }
+.rb-note { font-weight: 400; opacity: .7; }
+.rb-opts { display: flex; gap: 6px; flex-wrap: wrap; }
+.rb-opt {
+  display: grid; gap: 0; text-align: start; padding: 5px 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid rgba(255,255,255,.22); background: transparent; color: inherit; font: inherit; font-size: 12px; line-height: 1.35;
+}
+.rb-opt b { font-size: 13px; }
+.rb-opt span { opacity: .75; }
+.rb-opt:hover { border-color: rgba(255,255,255,.5); }
+.rb-opt.on { background: var(--blue); border-color: var(--blue); }
+.rb-opt:disabled { cursor: wait; }
+.rb-opt:focus-visible, .rolebar-show:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+.rb-err { color: #FFD7A8; font-size: 12px; }
+.rolebar .rb-hide { margin-inline-start: auto; color: #E9EFF8; border-color: rgba(255,255,255,.3); }
+.rolebar-show {
+  align-self: flex-start; margin: 6px 24px 0; padding: 3px 10px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 12px;
+}
+@media (max-width: 760px) { .rolebar { padding: 8px 12px; } .rolebar-show { margin-inline: 12px; } }

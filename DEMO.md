@@ -2,7 +2,7 @@
 
 **Before judging:**
 - Run `ops\start.ps1`. Both models are preloaded; Gemma's first load from disk takes about 94 s, so do this early.
-- Open two browser windows: one signed in as **eng_a**, one as **eng_b** (incognito).
+- Use the role bar at the top to switch between **Engineer A**, **Engineer B**, **Inspector** and **Admin**. No password is needed in demo mode; hide the bar with «إخفاء الشريط».
 - Test once with Wi-Fi OFF.
 - If the live AI fails, keep going: every AI screen shows its mode badge. The backup screenshots and video are in `E:\blue-balance-data\screens\`, made by `web/e2e/screens.spec.ts`.
 
@@ -15,7 +15,7 @@
 | 5 | Ask (agent) | Ask «شو أول ٣ مواقع لازم نفتشها بالكرك؟» then «مين صاحب المزرعة KRK-F-001؟» | «النموذج Qwen مفتوح المصدر شغّال على اللابتوب بدون إنترنت. كل رقم بالجواب مفحوص مقابل نتائج الأدوات، وبيرفض يعطي أسماء.» / "Open-weight Qwen, running locally and offline. Every number is checked against the tool results, and it refuses personal data." |
 | 6 | Crew report | Load DEMO-3 (the injection one) and click Extract | «Gemma بيطلع ١٠ حقول من كلام الفريق، وكل حقل مربوط بنفس الكلمات. وهون في جملة مدسوسة "تجاهل التعليمات"، النظام كشفها وطلب تأكيد.» / "Gemma extracts 10 fields, each tied to the exact words. This report has an injected instruction; the guard caught it and asks the crew to confirm." |
 | 7 | Case → field result | Click «ما لقينا إشي» | «نتيجة الزيارة بتحدّث الاحتمال فوراً والقائمة بتعيد ترتيب حالها. حتى الزيارة الفاضية إلها قيمة.» / "The visit result updates the posterior and the queue re-ranks live. Even an empty visit has value." |
-| 8 | Work order / map edit | eng_a drafts → eng_a tries to approve (403) → eng_b approves → export EPSG:28191 | «اللي بيطلب ما بيوافق. والوكيل الذكي بيكتب مسودة بس.» / "The requester can't approve, and the agent can only draft." |
+| 8 | Work order / map edit | Engineer A drafts → Engineer A tries to approve (refused) → switch to Engineer B in the role bar → approve → export EPSG:28191 | «اللي بيطلب ما بيوافق. والوكيل الذكي بيكتب مسودة بس.» / "The requester can't approve, and the agent can only draft." |
 | 9 | Transparency | Open it | «هون كل اشي: شو مرصود، شو محاكاة، شو افتراض. ولا اشي متحقق ميدانياً لسا، وهيك لازم نحكي.» / "Here's what is observed, simulated and assumed. Nothing is field-verified yet, and we say so." |
 
 ## Hard questions (short answers)
